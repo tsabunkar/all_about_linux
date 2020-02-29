@@ -66,3 +66,17 @@
 - Windows is open source OS but windows is liscened under Microsoft Corps
 
 ---
+
+# Linux Users
+
+- US Government and Agencies (FBI)
+- NASA
+- Health Care, Scientist
+- Bullet Train in Japan runs at speed at 150-215 m/h
+- Traffic Controls
+- Financial Institutes ex- Newyork stock exchange
+- Entertainment industries (Cinemas, Production houses etc)
+- World e-commerce leaders like- Amazon, eBay, PayPal and walmart run their platform on linux
+- Other forutne 500 Companies lilke - McDonalds, Google, FB, etc
+
+---
