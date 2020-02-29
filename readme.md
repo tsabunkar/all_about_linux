@@ -41,3 +41,28 @@
 - Create a virtual machine for Centos -> RAM : 2GB, Memory : 10GB
 - Download Centos-7 ISO Image (minimal image version)
 - Install CentOs ISO image in your virtual machine created in VirtualBox
+
+---
+
+# Different Linux Distro (Distribution) [Flavours of Linux's] :
+
+- Redhat (Not open source)
+- Centos [Supported by red-hat]
+- Fedora [Supported by red-hat]
+- suse [used by vm-ware]
+- debian
+- ubuntu
+- khali
+
+---
+
+# Linux v/s windows
+
+- linux is not user-friendly, but windows is
+- linux is very reliable but windows requires tuesday patched and reboot
+- linux is enterprise level software, windows is for games, office, utilites, etc
+- linux is best for multi-tasking, but windows can also do multitasking but uses very high cpu and memory resources
+- Linux is secure but windows is not secure
+- Windows is open source OS but windows is liscened under Microsoft Corps
+
+---
