@@ -80,3 +80,55 @@
 - Other forutne 500 Companies lilke - McDonalds, Google, FB, etc
 
 ---
+
+# Command Prompt
+
+root@tejas]#
+
+- root ==> User name
+- tejas ==> host name
+- \$ ==> prompt symbol logged in as user, # ==> Prompt Symbol logged in as root
+
+- hostname ==> Gives you the host name
+- whoami ==> Gives you the username
+
+---
+
+# Access to Linux System
+
+- Each OS has different protocol or client that is used to access the system
+- ex :
+- Windows ==> Remote Desktop Connection (RDP)
+- VMWare ESX ==> vSphere Client
+- Linux ==> Putty, SecureCRT, SSH from Linux to Linux
+
+- To install putty in Linux :
+- \$ sudo apt-get install -y putty
+- \$ putty
+
+---
+
+# Accessing from Ubuntu Host to CentOs VitualMachine using putty
+
+- Network Command : ipconfig (deprecated), ip addr (latest)
+- \$ yum install net-tools
+- \$ sudo apt install net-tools
+- Network Settings
+  - Host-only adapter: Allows communication b/w your PC and the VM
+  - Bridged Adapter: Allows communication b/w your PC and VM puls allows communication to the internet
+- ## Steps to Set the Bridge Adapter to CentOS Virtual Machine :
+  - Oracle VMBox > Centos7 Virtual Machine > Settings > Network > Adapter1
+  - Attached to : Bridge Adapter
+  - Name: wlsp3s0 (network Name, Can be anything but remeber this)
+  - Advanced : Promiscuous Mode => Allow All > OK
+  - Go to CentOS Virtual Machine > Device (Top-menu) > Network > Connect Network Adapter
+  - Virtual Machine Terminal : Login as root
+    - \$ su
+    - \# ifup wlsp3s0 ( To up the newtowkr ==> ifup <network-name-assigned> )
+    - \# ifconfig (inet 192.168.0.106)
+- Now Get to know the ip address of the Virtual Machine (Centos) and Host Machine(Ubuntu)
+  - ifconfig
+  - ping 192.168.0.106 (start ping from both the terminals from VM and Host)
+  - If all packets recieved succesfully then, Bridge Adapter is connected successfully
+- After Installing putty for linux : sudo apt-get install -y putty
+- Session > Host Name : 192.168.0.106, PORT : 22 > Open > Login with user/root
