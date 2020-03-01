@@ -132,3 +132,38 @@ root@tejas]#
   - If all packets recieved succesfully then, Bridge Adapter is connected successfully
 - After Installing putty for linux : sudo apt-get install -y putty
 - Session > Host Name : 192.168.0.106, PORT : 22 > Open > Login with user/root
+
+NOTE :
+
+- Linux has a super admin account : 'root'
+- 'root' is the most powerful account that can create, modify, delete account and make changes to system configuration files
+- Linux is a case-sensitive system
+- Avoid using file names with spaces
+
+---
+
+# Linux File System
+
+- OS Store data on disk drive using a structure called filesystem, consisting of files, directories, and the information needed to access and locate them.
+- There are many different types of filesystem. In general improvement have been made to filesystem with new releases of OS, and each new filesystem has been given different names ex- ext3, rx4, XFS, NTFS, FAT, etc
+- Linux filesystem store information in a hirearchy of directories and files
+- C drive in windows <==> '/' (root) in Linux
+- ## File System Structure and its description :
+  - /boot : Contains file that is used by the boot loader (grub.cfg)
+  - /root : root user HOME directory. It is not same as /
+  - /dev : System devices (ex- disk, cdrom, speakers, flashdrive, keyboard, keyboard, etc)
+  - /etc : Configuration files
+  - /bin -> /usr/bin : Everyday user commands
+  - /sbin -> /usr/sbin : System/filesystem commands
+  - /opt : Optional add-on applications (Not part of OS apps)
+  - /proc : Running processes (Only exist in Memory)
+  - /lib -> /usr/lib : C programming library files needed by commands and apps
+    \$ strace -e open pwd
+  - /tmp : Directory for temporary files
+  - /home : Directory for users account
+  - /var : System logs
+  - /run : System daemons that start very early (ex- systemd and udev) to store temporary runtime files like PID(processID) files
+  - /mnt : To mount external filesystem (ex: NFS)
+  - /media : For cdrom mounts.
+
+---
