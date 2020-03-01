@@ -39,3 +39,4 @@
 - To know number of threads, cpu, architecture of your computer : \$ lscpu
 - To kill running process : $ ps aux (Get the JobId of the process u want to kill)
 										 $ sudo kill <JobId>
+- To Enter as Root : sudo su - (Switch user)

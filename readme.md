@@ -139,6 +139,7 @@ NOTE :
 - 'root' is the most powerful account that can create, modify, delete account and make changes to system configuration files
 - Linux is a case-sensitive system
 - Avoid using file names with spaces
+- '/' ==> Slash Directory is parent of all directory ==> \$ cd /
 
 ---
 
@@ -165,5 +166,28 @@ NOTE :
   - /run : System daemons that start very early (ex- systemd and udev) to store temporary runtime files like PID(processID) files
   - /mnt : To mount external filesystem (ex: NFS)
   - /media : For cdrom mounts.
+
+---
+
+# Navigating File System
+
+- When navigating a UNIX filesystem, there are a few important commands
+  - cd : Change directive
+  - pwd : print working directory (Current working directory ur in)
+  - ls : list content of directory
+
+---
+
+# File System Path
+
+- There are 2 types to navigate to a filesystem
+  - Absolute Path
+  - Relative Path
+- An absolute path always begins with a '/'. This indicates that the path starts at the root directory.
+  ex : \$ cd /var/log/apt
+- A relative path does not begin with a '/'. It identifies a location relative to your current position.
+  ex : \$ cd /var
+  \$ cd log
+  \$ cd apt
 
 ---
