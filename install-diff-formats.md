@@ -5,4 +5,5 @@
 - This is will create a folder <filename>, where you can find the application to double click and run
 
 - tar -xzf <filename.tar.gz>
+
 - ex : tar xjf Postman-x64-7.19.1.tar.gz
