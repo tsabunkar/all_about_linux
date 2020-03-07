@@ -191,3 +191,63 @@ NOTE :
   \$ cd apt
 
 ---
+
+# Directory Listing Attributes
+
+- \$ ls -l (List all the directories in the alphabetical order)
+- \$ ls -lt (list all the directories/files which are last modified in Asc order [t -> Time])
+- \$ ls -ltr (list all the directories/files which are last modified in Desc order [tr -> Time, Reverse])
+- Type of file :
+  - drwxr-xr-x ==> Directory
+  - lrwxrwxrwx ==> link
+  - -rw-rx ==> Regular files
+
+---
+
+# Creating files and directories
+
+- Creating a file
+  - touch : \$ touch <file_name> (create an empty file)
+  - cp: \$ cp <src_file_name> <dest_file_name>
+    - \$ cp <src_file> <dest_file_1> <dest_file_2> .....
+  - vi :(using VIM Editor) : \$ vi homer
+- Creating Directories
+  - mkdir : \$ mkdir <directory_name>
+    - mkdir <dir_name_1> <dir_name_2> ...
+
+---
+
+# Linux File Types :
+
+- File Symbol : -, d, l, c, s, p, b
+
+- - ==> Regular file (No character/letter is assoicated then its regular file)
+- d ==> Directory
+- l ==> link
+- c ==> Special file or device file (keyboard, Mouse, Disk, etc are recognized as Special file)
+- s ==> socket
+- p ==> Named pipe
+- b ==> Block device
+
+- NOTE : When we execute \$ ls -l command then first column's first character defines the file Type
+
+---
+
+# Finding Files and Directories
+
+- Two commands are used to find files/directories :
+
+  - find
+  - locate
+
+- \$ find . -name "<file_name>" ==> . represent from current directory start searching the <file_name> mentioned
+- \$ find / -name "<fiel_name>" ==> from root direcotry start searching the <file_name> mentioned
+- \$ locate <file_name>
+
+- NOTE : To know the documentation of any command and how to use ==> man (ex : \$ man find)
+- Difference b/w find and locate :
+  - locate uses a prebuilt database, which should be regularly updated, while find itreates over a filesystem to locate files. Thus, locate is much faster than find, butcan be inaccurate if the db (can be seen as a cache) is not updated.
+  - To update local db run updatedb (This will be updated automatically by OS) ==> updatedb (to run this command become root)
+    NOTE : ERROR: updatedb: can not open a temporary file for `/var/lib/mlocate/mlocate.db', Then you should login as root ==> sudo su
+
+---
