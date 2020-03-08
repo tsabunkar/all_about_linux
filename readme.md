@@ -263,9 +263,12 @@ NOTE :
 
 - We use wildcard to search for file-name in generic way ex- superheroes1, superheroes2, .. then we write wildcards as : superheroes*, ?perheroes*, etc...
 - A wildcard is a character that can be used as a subsitute for any of a class of characters in a search
-- - ==> represents zero or more characters
+- \*astreic ==> represents zero or more characters
 - ? ==> represents a single characters
 - [] ==> represents a range of characters
+- \ ==> represents an escape character
+- ^ (caret) ==> represents the beginning of the line
+- \$ (dollar) ==> The end of the line
 
 - TASK : To create 10 files tejas1-xyz, tejas2-xyz, ....
 - touch tejas{1..10}-xyz.js
@@ -275,7 +278,7 @@ NOTE :
 
 - ls -l ?ejas\* ==> Give all the files, but we don't know the first character (first character can be anything)
 
-- ls -l astric[es]astric ==> Give me all the files which has e or s character in it
-- ls -l star[es]star | more
+- ls -l astreic[es]astreic ==> Give me all the files which has e or s character in it
+- ls -l astreic[es]astreic | more
 
 ---
