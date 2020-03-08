@@ -282,3 +282,40 @@ NOTE :
 - ls -l astreic[es]astreic | more
 
 ---
+
+# Links
+
+- Two types of links : Soft Links and Hards Links
+- inode ==> Pointer or number of a file on the hard disk
+- If we create a file called index.htmnl, we as human understand this is a file but the computer does not understand the file names so it recognize a file name by assigning the number to it called inode
+- Soft link ==> Link will be removed if file is removed or rename (link b/w filename and pointer/inode)
+- Hard link ==> Deleting, renaming or moving the original file will not affect the hard link
+- To create a hard link : \$ ln
+- To create a soft link : \$ ln -s
+- If file is created by hardlink then this link will be directly referencing to the inode, whereas if file is created by softlink then the file created will be directly referencing to the inode. (Check this fig in assests)
+- TASK : Creating soft links
+- \$ cd ~
+- \$ cd tejas/test
+- \$ touch hulk
+- \$ echo "hulk is a superhero" > hulk
+- \$ cat hulk
+- \$ pwd (u will get the path)
+- Now create another link of this hulk file inside temp folder(by referencing using soft link) as:
+- \$ mkdir temp
+- \$ cd temp (Come inside temp directory)
+- \$ ln -s /home/tejas/test/hulk
+- \$ ls -li ( i ==> indicates all the inodes)
+  [20845343 lrwxrwxrwx 1 tejas tejas 21 Mar 8 12:43 hulk -> /home/tejas/test/hulk]
+  (NOTE: You can see, that hulk is referencing to '/home/tejas/test/hulk' file)
+- (You can see the hulk created in "/test/hulk" and "/test/temp/hulk" have different node ids)
+
+- TASK : Creating hard links
+- \$ cd ~
+- \$ cd tejas/test
+- \$ touch thor
+- \$ echo "thor is a superhero" > thor
+- \$ cat thor
+- \$ mkdir temp
+- \$ cd temp
+- \$ ln /home/tejas/test/thor
+- \$ ls -li
