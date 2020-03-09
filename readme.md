@@ -382,3 +382,13 @@ NOTE :
 - To remove all the permission of user, group and all : \$ chomd 000 <file_name/direc>
 
 ---
+
+# File Owership
+
+- There are 2 owners of a file or directory
+- Command to change file ownership:
+  - chown: changes the ownership of a file
+  - chgrp changes the group ownership of a file
+- Recursive ownership change option (Cacade) : -R
+- chown root <file_name/direc> (Changing to root user)
+- chgrp root <file_name/direc> (Changing to root group)
