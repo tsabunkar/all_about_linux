@@ -2,6 +2,7 @@
 
 - Linux is OS, like Microsoft has windows, Apple has MACOS
 - Linux is an OS which sits in the middle of your hardware and users
+- Unix operating system was created more than 30 years ago by a group of researchers at AT&T's Bell Labs
 
 ---
 
@@ -319,3 +320,65 @@ NOTE :
 - \$ cd temp
 - \$ ln /home/tejas/test/thor
 - \$ ls -li
+
+---
+
+# Command Syntax :
+
+- Command options and arguments[syntax] : command option(s) argument(s)
+- Options :
+  - Modify the way that a command works
+  - Usually consist of hyphen or dash followed by a single letter
+  - Some commands accept multiple options which can usually be grouped together after a single hypen
+  - ex:
+    - \$ ls -l
+    - \$ ls -ltr
+- Arguments :
+  - Most commands are used together with one or more arguments
+  - Some commands assume a default argument if none is supplied
+  - Arguments are optional for some commands and required by others
+  - ex:
+    - \$ ls -l workspace
+    - \$ rm -f hulk (remove file)
+    - \$ rm -r temp (remove directory)
+- man ls (man stand for ==> manual) to check all the argumens and options of ls
+
+---
+
+# File Permission
+
+- UNIX is a multi-user system. Every file and directory in your account can be protected from or made accessible to other users by changing its access permissions. Every user has responsibility for controlling access to their files only.
+- Permission for a file or directory may be restricted to by types of operation to be performed
+- 3 types of permissions are :
+  - r ==> read
+  - w ==> write
+  - x ==> execute = running a program
+- Each permission (rwx) can be controlled at 3 levels :
+  - u ==> user (yourself)
+  - g ==> group (people in the same project)
+  - o ==> other (every one on the system/organization)
+- File or Directory permission can be displayed by running \$ ls -l command
+- Command to change permission ==> chmod (ch - change, mod - mode)
+- -rw-r--r-- ==> initial (-) indicates its file, first (rw-) indicates user has read and write permission, Second (r--) indicates group has read permissions and last (r--) indicates others has read permissions.
+
+## Permission assigned using Numeric Mode
+
+- SYNTAX TO ADD PERMISSION: cmod ugo+rwx <file_name/direcotry>
+- SYNTAX TO REMOVE PERMISSION: cmod ugo-rwx <file_name/direcotry>
+- To change the permission use -> chmod (change mode)
+- To remove write permission from group : \$ chmod g-w <file_name/direcotry> (g ==> group, - ==> remove, w ==> write permission)
+- To remove read permission from all user, group and others : \$ chomd a-r <file_name/direcotry> (a ==> all , r ==> read permission)
+- To remove write permission from user : \$ chmod u-w <file_name/direcotry>
+- To add read, write permission to user : \$ chmod u+rw <file_name/direcotry>
+- To add read, write permission to group : \$ chmod g+rw <file_name/direcotry>
+- To add read, write permission to others : \$ chmod o+rw <file_name/direcotry>
+- NOTE : We can see directory have x permission (Execute), does that mean directory can be executed ? No, execute of directory means we can perform cd operation on directory, To verify this, just remove the executable from folder then try to perform cd in to the file.
+
+## Permission assigned using Numeric Mode
+
+- SYNTAX: chomd <NUMBER> <file_name/direcotry>
+- chomd 754 <file_name/dir> : 7 ==> user (read,write and execute) || 5 ==> Group (read and execute), 4 ==> other (read)
+- check assets/chmod.pdf
+- To remove all the permission of user, group and all : \$ chomd 000 <file_name/direc>
+
+---
