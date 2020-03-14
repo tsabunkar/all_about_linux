@@ -11,7 +11,7 @@ List of software to be installed in ubuntu :
 - Git
 - gogh ( Terminal -> Onedark pro theme ), npp (One dark plus theme)
 - sudo snap install stickynotes
--
+- sudo apt install putty-tools (putty key gen)
 
 ---
 

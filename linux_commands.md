@@ -40,3 +40,4 @@
 - To kill running process : $ ps aux (Get the JobId of the process u want to kill)
 										 $ sudo kill <JobId>
 - To Enter as Root : sudo su - (Switch user)
+- To know which shell I am using in my terminal : echo \$SHELL or echo \$0

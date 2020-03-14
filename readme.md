@@ -323,6 +323,19 @@ NOTE :
 
 ---
 
+# Different type of Shell avaliable in Unix
+
+- Bourne shell (sh)
+- Bourne Again Shell (bash) (/bin/bash)
+- C shell (csh)
+- TC shell (tcsh)
+- rbash
+- dash
+
+- Comand to know which shell you are using in the terminal : echo \$SHELL or echo \$0
+
+---
+
 # Command Syntax :
 
 - Command options and arguments[syntax] : command option(s) argument(s)
