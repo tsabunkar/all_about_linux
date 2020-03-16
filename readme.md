@@ -405,3 +405,72 @@ NOTE :
 - Recursive ownership change option (Cacade) : -R
 - chown root <file_name/direc> (Changing to root user)
 - chgrp root <file_name/direc> (Changing to root group)
+
+---
+
+# Access Control List (ACL)
+
+- ACL provides an additional, more flexible permission mechanism for file systems. It is desgined to assist the UNIX file permissions. ACL allows you to give permissions for any user or group to any disc resource.
+- Use of ACL :
+  - Think of a scenario in which a particular user is not a member of group created by you but still you want to give some read or write access, how can you do it without making user a member of group, here comes in picture access control lists, ACL helps us to do this trick.
+  - Bascially, ACLs are used to make flexible permission mechianism in Linux.
+  - From Linux man pages, ACLs are used to define more fine-grained discretionary access right for files and directories.
+  - Commands to assign and remove ACL permissions are :
+    - setfacl and getfacl
+- List of commands for setting up ACL:
+  1. To add permssion for user
+  - \$ setfacl -m u:user:rwx /path/to/file
+  2. To add permissions for a group
+  - \$ setfacl -m g:group:rw /path/to/file
+  3. To allow all files or directories to inherit ACL enteries from the directory it is within
+  - \$ setfacl -dm "entry" /path/to/file
+  4. To remove a specific entry
+  - \$ setfacl -x u:user /path/to/file (for a specific user)
+  5. To remove all entries
+  - \$ setfacl -b path/to/file (for all users)
+- NOTE :
+  - As you assign the ACL permission to a file/directory it adds + sign at the end of the permssion
+  - Setting w permission with ACL does not allow to remove a file
+- CMD :
+  - \$ sudo su
+  - \# cd /
+  - \# cd tmp
+  - \# touch tx
+  - \# ls -l tx
+  - \# getfacl tx
+  - Currently u are root, but if you want tejas user to give write permission to this file tx -> we can perform this by ACl. note : rightnow 'tejas' is one the user in the root so he falls under OTHER, thus e cannot just directly and give write access to OTHER then all the users in the root will be able access with write permission
+  - (open new terminal log as tejas)
+    - \$ cd /
+    - \$ cd tmp
+    - \$ ls -l tx
+    - \$ vi tx (read only)
+  - \# setfacl -m u:tejas:rw /tmp/tx
+  - \# getfacl /tmp/tx (now go and check in other terminal)
+  - (To remove this permission from tejas)
+  - \# setfacl -x u:tejas /tmp/tx
+  - \# setfacl -b /tmp/tx (to remove permission from all the users)
+  - (Now other users like tejas cannot delete this file) \$ rm tx
+
+---
+
+# Help commands
+
+- There are 3 types of help commands
+  - 'whatis' command
+  - command --help
+  - 'man' command (man -> manual)
+- \$ whatis ls
+- \$ whatis pwd
+- \$ ls --help
+- \$ chmod --help
+- \$ man ls
+- \$ man pwd
+
+---
+
+NOTE : Shortcuts -> TAB Completion and Up Arrow
+
+- Hitting TAB key completes the avaliable commands, files or direcotries. To see all the files/directory which starts with particular characters pres TAB twice
+- Hitting up arrow key on the keyboard returns the last command ran.
+
+---
