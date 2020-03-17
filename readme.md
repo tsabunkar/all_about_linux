@@ -491,3 +491,25 @@ NOTE : Shortcuts -> TAB Completion and Up Arrow
 - \$ cat listingofdir
 - \$ vi listingofdir
 - \$ date >> listingofdir
+
+---
+
+# Standard Output of a file (tee)
+
+- "tee" command is used to store and view (both at the same time) the output of any command
+- The command is named after the T-splitter used in plumbing. It basically breaks the output of a program so that it can be both displayed and saved in a file. It does both the task simultaneously, copies the result into the specified files or variable and also display the result.
+- Check the image : /assets/tee.png
+- \$ whoami
+- \$ pwd
+- \$ hostname
+- \$ echo "I am great person" > tsabunkar (write to the file)
+- \$ cat tsabunkar
+- \$ rm -f tsabunkar
+- \$ echo "I am great person" | tee tsabunkar (wirte to the file and also execute the file as we do with cat)
+- \$ echo "Tejas is also Healthy person" | tee -a tsabunkar (-a ==> append the text to pervious content)
+- \$ cat tsabunkar
+- \$ wc -c tsabunkar (To check number of characters in file)
+- \$ ls -l | tee listdir
+- \$ cat listdir
+- \$ ls -l | tee f1 f2 f3
+- \$ rm -f fasteric(\*)
