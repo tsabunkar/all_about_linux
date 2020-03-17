@@ -474,3 +474,20 @@ NOTE : Shortcuts -> TAB Completion and Up Arrow
 - Hitting up arrow key on the keyboard returns the last command ran.
 
 ---
+
+# Addding Text to Files (Redirects)
+
+- 3 Simple ways to add text to a file
+  - vi
+  - Redirect command
+  - echo
+- \$ echo "hello world" (Gives the same output)
+- \$ echo "hello jeery" > jerry (This will create a jerry file and will write this text)
+- \$ cat jerry (cat -> Read the content inside the file)
+- \$ echo "Tom hello" > jerry (override the previous content and add new content/ delete previous file and add this new file)
+- \$ echo "Harry potter is great" >> jerry (Will not overide the previous content, but append new content)
+- \$ touch listingofdir
+- \$ ls -ltr > listingofdir (This will add the list of files inside this file)
+- \$ cat listingofdir
+- \$ vi listingofdir
+- \$ date >> listingofdir
