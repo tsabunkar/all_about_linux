@@ -513,3 +513,56 @@ NOTE : Shortcuts -> TAB Completion and Up Arrow
 - \$ cat listdir
 - \$ ls -l | tee f1 f2 f3
 - \$ rm -f fasteric(\*)
+
+---
+
+# Pipes
+
+- A pipe is used by shell to connect the output of one command directly to the input of another command
+- syntax : command1 [args] | command2 [args]
+
+- EX:
+- \$ cd /etc
+- \$ ls -l | more
+- \$ ls -ltr | more
+- \$ ll | more
+- \$ ls -l | tail -1 (gives last line of the output)
+- \$ ls -l | tail -2 (gives last two line of the output)
+- \$ ls -l | head -2 (gives first line of the output)
+- \$ ls -l | head -3 (gives first two line of the output)
+
+---
+
+# File Mantaince Command
+
+- cp (copy)
+- rm (remove)
+- mv (move/re-name the filename)
+- mkdir (make directory)
+- rmdir or rm -r (remove directory)
+- rm -Rf --> (will forcefully remove all sub-directories and its content as well)
+- chgrp (Change ownership of file/dir @group level)
+- chown (Change ownership of file/dir @user level)
+
+- EX :
+- \$ man cp
+- \$ cp <src_file_to_copy> <dest_copied_from_src>
+- \$ cp tsabunkar shailesh && cat shailesh
+- \$ rm -f shailesh
+- \$ touch usha
+- \$ echo "Usha is mom" > usha
+- \$ cat usha
+- \$ mv <src> <des>
+- \$ mv usha usabunkar (usha filename has been re-named to usabunkar)
+- \$ mv usabunkar /home/tejas/tejas/ (filed moved from '/home/tejas/tejas/play-linux' --to--> '/home/tejas/tejas/')
+- \$ mkdir got
+- \$ rmdir -r got
+- \$ sudo su
+- \$ chgrp root <file_name>
+- \$ touch ram
+- \$ ls -l ram
+- \$ chgrp tejas ram (Change ownership of ram file from 'root' to 'tejas' group level)
+- \$ ls -l ram
+- \$ chown tejas ram (Change ownership of ram file from 'root' to 'tejas' user level)
+- \$ ls -l ram
+- \$ chown root:root ram (Change ownership of ram file from 'tejas' to 'root' both group and user level)

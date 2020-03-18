@@ -41,3 +41,4 @@
 										 $ sudo kill <JobId>
 - To Enter as Root : sudo su - (Switch user)
 - To know which shell I am using in my terminal : echo \$SHELL or echo \$0
+- To Change hostname : \$ sudo hostname ubuntu
