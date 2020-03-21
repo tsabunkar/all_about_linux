@@ -566,3 +566,26 @@ NOTE : Shortcuts -> TAB Completion and Up Arrow
 - \$ chown tejas ram (Change ownership of ram file from 'root' to 'tejas' user level)
 - \$ ls -l ram
 - \$ chown root:root ram (Change ownership of ram file from 'tejas' to 'root' both group and user level)
+
+---
+
+# File Display Commands
+
+- cat
+- more
+- less
+- head
+- tail
+
+EX :
+
+- \touch messages
+  \$ cat messages
+  \$ echo "I am terrific" >> messages
+  \$ cat messages (show the content of the file at onces)
+- \$ more messages (show the content of the file but one page at a time)
+- \$ less messages (shows the content in the file one page at a time in reverse order) ('j' and 'k' KEY / up arrow and down arrow KEY is used to move within the file)
+- \$ head messages (shows the first two lines of the file)
+- \$ tail messages (shows the last tow lines of the file)
+
+---
