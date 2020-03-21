@@ -589,3 +589,34 @@ EX :
 - \$ tail messages (shows the last tow lines of the file)
 
 ---
+
+# Filters / Text Processors Commands
+
+- cut
+- awk
+- grep and egrep
+- sort
+- uniq
+- wc
+
+## cut Text Processors Commands
+
+- cut is a command line utility that allows you to cut parts of lines from specified files or piped data and print the result to standard output. It can be used to cut parts of a line by delimiter, byte position and character.
+- cut filename
+- \$ cut --version
+- \$ cut -c1 <filename> (To get the first character of the content in the file)
+- \$ touch avengers | vi avengers (enter all avengers name)
+- \$ cat avengers
+- \$ cut -c1 avengers (To get the first characters of all the line)
+- \$ cut -c1,2,3,4 avengers (Gets the first, second, third and forth characters of all the lines)
+- \$ cut -c1,5,2 avengers (Gets the first,fifth and second characters of all the lines)
+- \$ cut -c1-5 avengers (list the range of characters from 1 to 5 characters of all lines)
+- \$ cut -c1-3,6-9 avengers (get first three characters and sixth,seventh and ninth characters)
+- \$ cut -b1-3 avengers (list the bytes size representation from first three range of characters of all line)
+- \$ cat /etc/passwd
+- \$ cut -d: -f 6 /etc/passwd (delimiter -> : , 6th character after delimiter must be printed)
+- \$ cut -d: -f 6-7 /etc/passwd (gives both 6th and 7th strings)
+- \$ ls -l | cut -c2,3
+- \$ ls -l | cut -c2,3,14-24
+
+## awk Text Processors Commands
