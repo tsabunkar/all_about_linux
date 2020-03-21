@@ -605,7 +605,7 @@ EX :
 - cut filename
 - \$ cut --version
 - \$ cut -c1 <filename> (To get the first character of the content in the file)
-- \$ touch avengers | vi avengers (enter all avengers name)
+- \$ touch avengers | vi avengers (enter all avengers name) [avengers ==> file name]
 - \$ cat avengers
 - \$ cut -c1 avengers (To get the first characters of all the line)
 - \$ cut -c1,2,3,4 avengers (Gets the first, second, third and forth characters of all the lines)
@@ -620,3 +620,18 @@ EX :
 - \$ ls -l | cut -c2,3,14-24
 
 ## awk Text Processors Commands
+
+- awk is a utility/language designed for data extraction. most of the time it is used to extract fields from a file or from an output.
+- \$ awk -W version
+- $ awk '{print $1}' avengers (Prints the 1st field from avengers file)
+- $ awk '{print $2}' avengers (prints 2nd field from avengers file)
+- $ ls -l | awk '{print $1, \$3}' (list 1st and 3rd field of ls -l output)
+- $ ls  -l | awk '{print $NF}' (list last column of ls -l output)
+- \$ awk '/hulk/ {print}' avengers (It is case sensitive, Search for specific word in the file avengers)
+- $ awk -F: '{print $1}' /etc/passwd (output only 1st field of /etc/paswd, delimiter -> :)
+- $ awk -F: '{print $6}' /etc/passwd
+- $ echo "Hello Tom" | awk '{$2="Jerry"; print $0}' (Replace 'Hello Tom' => 'Hello Jerry' since $2 indicates 'Tom')
+- $ cat avengers | awk -F- '{$2="tejas"; print \$0}' (In avengers file, string are sperated by delimiter ==> - then replace with 'tejas', so 'ant-man' ==> 'ant tejas')
+- $ awk 'length($0) > 5' avengers (list the lines that have more than 5 bytes size)
+- $ ls -l | awk '{if($9 == "hulk") print \$0;}' (if 9th column is ls -l has file name as 'hulk' then print that)
+- \$ ls -l | awk '{print NF}' (Tells that ls -l has 9 fields/columns)
