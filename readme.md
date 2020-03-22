@@ -633,5 +633,20 @@ EX :
 - $ echo "Hello Tom" | awk '{$2="Jerry"; print $0}' (Replace 'Hello Tom' => 'Hello Jerry' since $2 indicates 'Tom')
 - $ cat avengers | awk -F- '{$2="tejas"; print \$0}' (In avengers file, string are sperated by delimiter ==> - then replace with 'tejas', so 'ant-man' ==> 'ant tejas')
 - $ awk 'length($0) > 5' avengers (list the lines that have more than 5 bytes size)
-- $ ls -l | awk '{if($9 == "hulk") print \$0;}' (if 9th column is ls -l has file name as 'hulk' then print that)
+- $ ls -l | awk '{if($9 == "hulk") print \$0;}' (if 9th column is ls -l has file name as 'hulk' then prin that)
 - \$ ls -l | awk '{print NF}' (Tells that ls -l has 9 fields/columns)
+
+## grep/egrep Text Processors Commands
+
+- grep : this command which stands for 'global regular expression prints any lines which match a specified pattern
+- $ grep <keyword> <file_name> [$ grep hulk avengers] (Find the string in the file)
+- \$ grep -c hulk avengers (number of occurance of search keyword)
+- \$ grep -i HuLK avengers (search by ignoring case)
+- \$ grep -n gamora avengers (gives the lines number of search keyword)
+- \$ grep -v falcon avengers (gives all the content expect the searched keyword)
+- \$ grep -vi groot avengers
+- $ grep groot avengers | awk '{print $1}' (gives the first column of searched field)
+- $ grep groot avengers | awk '{print $1}' | cut -c1-3
+- \$ cd ~
+- \$ ls -l | grep Desktop
+- \$ egrep -i "Hulk|groot" avengers (Search multiple keywords using pipe)
