@@ -43,3 +43,4 @@
 - To know which shell I am using in my terminal : echo \$SHELL or echo \$0
 - To Change hostname : \$ sudo hostname ubuntu (To change permantely, edit hostname inside '/etc/hsotname' file by login in as admin)
 - If you want to run vsocde with super-user privilege : \$ sudo code --user-data-dir="/etc" ("etc" -> absolute file path)
+- Switch between users : su --help, \$ su --login guest

@@ -639,6 +639,7 @@ EX :
 ## grep/egrep Text Processors Commands
 
 - grep : this command which stands for 'global regular expression prints any lines which match a specified pattern
+- \$ grep --version
 - $ grep <keyword> <file_name> [$ grep hulk avengers] (Find the string in the file)
 - \$ grep -c hulk avengers (number of occurance of search keyword)
 - \$ grep -i HuLK avengers (search by ignoring case)
@@ -650,3 +651,56 @@ EX :
 - \$ cd ~
 - \$ ls -l | grep Desktop
 - \$ egrep -i "Hulk|groot" avengers (Search multiple keywords using pipe)
+
+## sort/uniq- Text Processors Commands
+
+- sort commands : Sorts in alphabetical order
+- uniq commands : Uniq command filters out the repated or duplicate lines
+- \$ sort --version
+- \$ sort avengers (sort the files in alphabetical order)
+- \$ sort -r avengers (descending order)
+- \$ sort -k2 avengers (Sort the 2nd filed/column)
+- \$ ls -l | sort (sort ls -l in ascending order)
+- \$ ls -l | sort -r (sort ls -l in descending order)
+- \$ uniq avengers (Removes the duplicate strings/words in the avengers file)
+- \$ echo hulk >> avengers
+- \$ cat avengers
+- \$ uniq avengers (This will not remove 'hulk' duplication)
+- \$ sort avengers | uniq (Always sort first before using uniq )
+- \$ sort avengers | uniq -c (Shows the number of duplicate keyword)
+- \$ sort avengers | uniq -d (shows the duplicate keyword)
+- \$ ls -l | sort | uniq
+
+## wc - Text Processors Commands
+
+- wc stands for word count
+- wc ==> This commands reads either standard input or a list of files and generates: newline count, word count, and byte count
+- \$ wc --version
+- \$ wc --help
+- \$ wc avengers ( o/p : 21 22 183 avengers, Avengers file has 21 -> lines, 22 words and 183 bytes size)
+- \$ wc -l avengers (gives only number of lines)
+- \$ wc -w avengers (gives only count of words)
+- \$ wc -c avengers (gives only byte size of avengers file)
+- \$ wc <DIRECTORY> (\$ wc workspace) [cannot run the wc on director]
+- \$ ls -l | wc -l (gives the number of lines of list ls -l)
+- \$ ls -l | grep drw | wc -l (gives the count of directory)
+- \$ cat avengers
+- \$ grep hulk avengers | wc -l (gives the count of hulk word present in the avengers files)
+
+---
+
+# Compare files
+
+- diff (compare two files line by line)
+- cmp (compare two files byte by byte)
+- create a two files superman and supeman2, in these two files add one different string
+- \$ diff superman superman2
+- \$ cmp superman superman2
+
+---
+
+# Compress and un-compress files
+
+- tar
+- gzip
+- gzip -d (or) gunzip
