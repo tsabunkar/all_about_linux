@@ -712,3 +712,39 @@ EX :
 - \$ tar xvf myFiles.tar (untaring the myFiles.tar inside foo)
 - \$ gzip myFiles.tar (ziping the .tar file) [converte myFiles.tar ==> myFiles.tar.gz]
 - \$ gzip -d myFiles.tar.gz (uncompress the .tar.gz file) [converte myFiles.tar.gx ==> myFiles.tar]
+
+---
+
+# Truncate File size (truncate)
+
+- truncate command is not used to compress, it chops the file content (resulting lost of the content)
+- The linux truncate command is often used to shrink or extend the size of a file to the specified size.
+- SYNTAX: truncate -s 10 <file_name>
+- \$ touch books
+- \$ echo trevor noah 12 years a slave 1984 The power of Your subconsious mind Decepition point > books
+- \$ cat books
+- \$ ls -l books (Size of the file is 86)
+- \$ truncate -s 40 books
+- \$ ls -l books (Size has been reduced to 40 bytes)
+- \$ cat books [ Some of the content inside the file is lost :( ]
+- \$ truncate -s 90 books ( we can also increase the file size)
+- \$ ls -l books
+- \$ nano books [OS will add -> @^@^@^@^@ to increase the file size, :) Silly right]
+
+---
+
+# Combining and Spliting files
+
+- Multiple files can be combined into one and one file can be split into multiple file
+  SYNTAX
+- cat file1 file2 file3 > file4
+- split file4
+- split -l 300 file.txt childfile
+- Split file.txt into 300 lines per file and ouptu to childfileaa, childfileab and childfileac
+- \$ nano countries
+- \$ cat countries | wc -l (13 lines)
+- \$ split -l 2 countries sep (splits into two lines for each file, thus OS will create sepaa, sepab, sepac, ..sepag files total 7 files)
+- \$ cat sepaa
+- \$ cat sepag
+
+---
