@@ -701,6 +701,14 @@ EX :
 
 # Compress and un-compress files
 
-- tar
-- gzip
-- gzip -d (or) gunzip
+- tar (putting everthing together inside the container)
+- gzip (Now to compress the container we zip it)
+- gzip -d (or) gunzip (uncompress the zip container)
+
+- \$ tar cvf myFiles.tar ~/tejas/play-linux/ (taring all the files present inside play-linux dircetor to myFiles.tar)
+- \$ mkdir foo
+- \$ mv myFiles.tar foo/
+- \$ cd foo
+- \$ tar xvf myFiles.tar (untaring the myFiles.tar inside foo)
+- \$ gzip myFiles.tar (ziping the .tar file) [converte myFiles.tar ==> myFiles.tar.gz]
+- \$ gzip -d myFiles.tar.gz (uncompress the .tar.gz file) [converte myFiles.tar.gx ==> myFiles.tar]
