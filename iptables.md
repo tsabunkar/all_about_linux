@@ -55,3 +55,15 @@ $ sudo netfilter-persistent start
 
 Above solution will work partially bcoz, youtube is keep on adding the new servers with different ipaddress, so when we browse www.youtube.com our browser will find some or other ipaddress after pre-long loading
 Soo better use '/etc/hosts' file to block this url
+
+---
+
+Was not able to connect to google.meet , google hangout and google dirve
+
+- This was bcoz of the above iptables rules set so : Fluhed all policies and rules
+- iptables -P INPUT ACCEPT
+- iptables -P OUTPUT ACCEPT
+- iptables -P FORWARD ACCEPT
+- iptables -F
+
+- Then execute above commands to persist this rule permantely
