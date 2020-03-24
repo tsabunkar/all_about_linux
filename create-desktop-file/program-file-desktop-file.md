@@ -5,3 +5,7 @@
 - \$ touch eclipse.desktop (file name with ext .desktop)
 - \$ nano eclipse.desktop
 - \$ copy + paste the content of eclipse.desktop
+
+---
+
+Source : https://askubuntu.com/questions/695382/how-to-install-eclipse-using-its-installer
