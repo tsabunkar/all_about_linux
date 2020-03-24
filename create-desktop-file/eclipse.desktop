@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+Name=Eclipse IDE (custome name while searching)
+Comment=Eclipse Integrated Development Environment
+Icon=/home/tejas/tejas/softwares/eclipse/icon.xpm (Path: .xpm file)
+Exec=/home/tejas/tejas/softwares/eclipse/eclipse (Path: executable file)
+StartupNotify=true
+StartupWMClass=eclipse (file name of => .ini)
