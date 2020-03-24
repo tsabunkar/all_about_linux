@@ -25,6 +25,7 @@
 - To remove unused packages : \$ sudo apt-get autoremove
 - To Un-intall a package : \$ sudo apt-get --purge remove <package_name>
 - To Find list of install packages \$ dpkg --list
+- To uninstall a package from dpkg packages \$ sudo dpkg --purge <packgae_name>
 - To change the privilige to admin of particular command just append with 'sudo'
 - Shutdown now : \$ shutdown now
 - Reboot \$ sudo reboot
