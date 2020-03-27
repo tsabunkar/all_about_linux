@@ -46,3 +46,4 @@
 - If you want to run vsocde with super-user privilege : \$ sudo code --user-data-dir="/etc" ("etc" -> absolute file path)
 - Switch between users : su --help, \$ su --login guest
 - Install .deb file :\$ sudo apt install ./<file_name> (Naviagate to that deb file)
+- To open folder with GUI from Terminal: \$ nautilus <path> 
