@@ -92,3 +92,39 @@ Please loggoff, this system is coming down for maintance
 SpiderMan you cannot be Ironma
 
 ---
+
+# Linux Account Authentication
+
+- Type of Accounts
+
+  - Local accounts
+  - Domain/Direcotry Accounts
+  - Windows uses Active Direcotry
+  - LDAP is protocol Linux does not uses it
+
+- Difference between Active Directory, LDAP, IDM, WinBIND, OpenLDAP :-
+  - Active Directory is for Microsoft
+  - IDM is Identity Manager (RedHat)
+  - WinBIND is used in Linux to communicate with Windows(Samba)
+  - OpenLDAP (open source) - LDAP is a protocol - direcotry service just like active directory service but for linux os
+  - IDM Directory Server
+  - JumpCloud
+  - LDAP = Lightweight Direcotry Access Protocol
+
+---
+
+# System Utility Commands
+
+- \$ date (Gives date and time info)
+- \$ uptime (how long the system is up/running for, load average)
+- \$ hostname [display hostname - is used to obtain the DNS(Domain Name System) A hostname is a name which is given to a computer and it attached to the network]
+- \$ uname (OS name)
+- \$ uname -a (complete details of your linux distro)
+- \$ which pwd (which directory is command - pwd is located in )
+- \$ which ls (which directory is command - ls is located in ) [commands like -pwd, ls are located in some file which have some logics/scripts]
+- \$ ls -l | wc -l
+- \$ cal (shows the calendar)
+- \$ cal 9 1994
+- \$ cal 9 1994 (month year)
+- \$ cal 2016
+- \$ bc (Calculator)
