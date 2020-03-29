@@ -32,3 +32,16 @@
   - :wq! : quit and save
 
 ---
+
+# Practice
+
+- \$ sudo apt-get install vim (This is upgraded version of older vi)
+- \$ vim myfirstfile
+- wq! ==> Save and quite the file
+- SHIFT +zz ==> Save file and quite/exit
+- Press i ==> To go in inset mode, To comeout from insert mode ESC
+- esc mode-> press d -> Delete the entier line
+- esc mode-> press u -> Redo of deleted line
+- esc mode-> press x -> To delete/remove one character
+
+---
