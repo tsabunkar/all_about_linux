@@ -60,3 +60,35 @@ PRACTICE:
 - \$ sudo fdisk -l (Information about ur disk)
 
 ---
+
+# Monitor Users
+
+- \$ who (who has logged in)
+- \$ last (all the users who have logged in)
+- \$ w (who have logged in currently)
+- \$ finger [sudo apt install finger]
+- \$ id
+- $ last | awk '{print \$1}' | sort | uniq
+- \$ id <user_name>
+
+---
+
+# Talking to users
+
+- users
+- wall (broadcast your message to all users)
+- write (message to only particular user)
+
+- How to use wall ->
+
+\$ wall
+
+Please loggoff, this system is coming down for maintance
+
+- How to use write ->
+
+\$ write spiderman
+
+SpiderMan you cannot be Ironma
+
+---
