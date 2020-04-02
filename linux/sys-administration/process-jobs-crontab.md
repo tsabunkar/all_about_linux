@@ -71,3 +71,37 @@ PRACTICE:
 - \$ cat /etc/cron.d/0hourly (Specifiy - which time hourly will run) --> I dont have this file
 
 ---
+
+# Process Management
+
+- Process running background ==> Ctrl-z, jobs and bg
+- Foreground ==> fg
+- Run process even after exit ==> nohup process &
+  - OR = nohup process > /dev/null 2>&1 &
+- Kill a process by name ==> pkill
+- Process priority = nice (ex: nice -n 5 process)
+
+NOTE: The niceness scale goes from -20 to 19. The lower the number more priority that
+task gets
+
+- process monitoring ==> top
+- list process ==> ps
+
+PRACTICE
+
+- \$ sudo su
+- \$ sleep 5 (Delay certain program for specific period of time, sleep for 5 seconds)
+- \$ sleep 100 (This is another process) [to stop this process --> Ctrl+z note it is not Ctrl+c ]
+- \$ jobs (to see all the process)
+- \$ bg (To send a particular process to background)
+- \$ jobs (Now it shows sleep process is running not stopped)
+- \$ ps -ef | grep sleep
+- \$ fg (to bring that sleep process from background to foreground) [ To again move this process to background -> Ctrl+z ]
+- (How to run a process without effecting the process eventhough Terminal is closed) ==> nohup
+- \$ nohup sleep 700 & (Running the process in background, but this process is not attached to a terminal)
+- \$ jobs
+- \$ nohup sleep 750 > /dev/null 2>&1 & (Send all those warning to null don't show anything in terminal)
+- \$ jobs
+- \$ nice -n 5 sleep 700 (Tells cpu to give this sleep 700second process with prioirty 5 NOTE : range of priorities [-20, 19])
+
+---
