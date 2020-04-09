@@ -24,6 +24,7 @@ PRACTICE:
 - \$ ls -ltr (List of users avaliable in your system)
 - \$ groupadd avengers (Create a new group called avengers)
 - \$ cat /etc/group (To verifiy the group was created)
+- \ $ awk -F: '{ print $1}' /etc/passwd {To list all the users present by username}
 - \$ userdel -r spiderman (delete the user spiderman, and also the directory present inside /home)
 - \$ groupdel avengers (delete the group avengers)
 - \$ man usermod

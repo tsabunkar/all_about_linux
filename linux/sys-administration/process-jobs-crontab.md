@@ -105,3 +105,32 @@ PRACTICE
 - \$ nice -n 5 sleep 700 (Tells cpu to give this sleep 700second process with prioirty 5 NOTE : range of priorities [-20, 19])
 
 ---
+
+# System Monitoring Commands
+
+- top
+- df
+- dmesg
+- iostat 1
+- netstat
+- free
+- cat /proc/cpuinfo
+- cat /proc/meminfo
+
+---
+
+- \$ top
+- \$ df (Disk partion information)
+- \$ df -h (human readable) [if system crahes, check if the disk is not 100% used]
+- \$ man du (documentation to free up your partition space)
+- \$ dmesg | more (monitor the system)
+- \$ sudo apt install sysstat
+- \$ iostat (how we are communicating with peripherial/internal/external devices)
+- \$ iostat 1 (Refresh every 1 second)
+- \$ netstat (Gateway, rounting information)
+- \$ netstat -rnv
+- \$ free (display physcial memory and swap space -> is your virtual memory)
+- \$ cat /proc/cpuinfo (To know the complete CPU inform)
+- \$ cat /proc/meminfo (To know the complete memory inform)
+
+---
