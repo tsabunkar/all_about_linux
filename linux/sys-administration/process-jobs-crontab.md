@@ -186,3 +186,74 @@ PRACTICE
 - \$ man halt
 
 ---
+
+# Changing System Hostname
+
+- hostnamectl set-hostname <newhostname>
+- Version 7 => Edit /etc/hostname
+- Version 6 => Edit /etc/sysconfig/network
+
+- \$ hostname
+- \$ cat /etc/hostname (file which has hostname information)
+- \$ hostnamectl set-hostname ubuntu
+- \$ init 6 (reboot) [inorder to reflect the above hostname modified]
+
+---
+
+# Finding System Information
+
+- \$ hostname
+- \$ whoami
+- \$ cat /etc/redhat-release (Redhat OS-> like: CentOS)
+- \$ uname -a
+- \$ sudo dmidecode
+- \$ sudo dmidecode | more
+
+---
+
+# System Architecture
+
+- Difference types of system architecture are: 32bit and 64bit CPU
+- A big difference b/w 32bit and 65bit processors is the number of calculations per second they can perform, which affects the speed at which they can complete tasks. 64bit processors can come in dual core, quad core, six cores, eight cores, soon..
+- Multiple cores allow for an increased number of calculation per second that can be performed, which can increase the processing power and help make a computer run faster.
+- Software programs that require many calculations to function smoothly can operate faster and more efficient on the multi-core 64bit processors.
+- you can run 32bit applications in 64bit application but vice-versa is not possible.
+
+- \$ arch (Gives the architecture) ==> [x86_64 => 64 bit arch]
+- \$ uname -a
+
+---
+
+# Terminal Control Keys
+
+- Several key combinations on your keyboard usually have a specified effect on the terminal.
+- CTRL+u (Earse everything you have typed)
+- CTRL+c (Stop/kill a command/process running)
+- CTRL+z (Suspend a command/process)
+- CTRL+d (exit from an interactive program)
+- CTRL+ALT+T (Open new terminal)
+- CTRL+SHIFT+T (Open new window in same terminal)
+- ALT+Number1/2 (Shift between windows)
+- CTRL+SHIFT+C (Copy content from terminal)
+- SHIFT+Insert (Paste the content into the terminal)
+
+---
+
+# Terminal Commands
+
+- clear (Clear your screen)
+- exit (Exit out of the shell, terminal or a user session)
+- script (The script command stores terminal activities in a log file that can be named by a user, when a name is not provided by a user, the default file name, typescript is used)
+
+- \$ clear
+- \$ exit
+- \$ cd ~/tejas/play-linux/
+- \$ script logfileactivity.log (All your commands running will be logged in this file which is stored inside play-linux directory)
+- \$ ls -ltr
+- \$ history
+- \$ pwd
+- \$ whoami
+- \$ cat logfileactivity.log | more
+- \$ exit (To exit this recording of scripts) o/p- [Script done, file is logfileactivity.log]
+
+---
