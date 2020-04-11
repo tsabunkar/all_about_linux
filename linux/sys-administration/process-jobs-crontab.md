@@ -134,3 +134,55 @@ PRACTICE
 - \$ cat /proc/meminfo (To know the complete memory inform)
 
 ---
+
+# System Logs Monitoring
+
+- NOTE : Log Directory of system ==> /var/log
+- boot
+- chronyd = NTP
+- cron
+- maillog
+- secure
+- messages
+- maillog
+- secure ==> /var/log/auth.log or /var/log/secure
+- messages ==> Renamed to : /var/log/syslog or /var/log/messages
+- httpd
+
+- \$ cd /var/log
+- \$ ll | more
+- \$ ll boot.log
+- \$ more boot.log (only root has read access)
+- \$ sudo su -l root
+- \$ cd /var/log
+- \$ ll boot.log
+- \$ more boot.log (Contains log information about bot)
+- \$ ll auth.log (present inside /var/log)
+- \$ more auth.log (store authentication logs, including both successful and failed logins and authentication methods)
+- \$ ll syslog
+- \$ more syslog (general messages, as well as system-related information. Essentially, this log stores all activity data across the global system. FIrst thing need to check if system carshes)
+- \$ cat syslog | wc -l (number of lines in this syslog file)
+- \$ grep -i error syslog (shows all the content which has keyword as error)
+
+---
+
+# System Maintance Commands
+
+- shutdown
+- init 0-6
+  - 0 Halt the system
+  - 1 Single user mode
+  - 2 Multiuser mode without networking
+  - 3 Multiuser mode with networking
+  - 4 Not used
+  - 5 Multiuser with networking and X windows
+  - 6 Reboot the system
+- reboot
+- halt (shutdown the computer forceful, any process are running will be terminate abruptly)
+
+- \$ man shutdown
+- \$ man init
+- \$ man reboot (restart your command)
+- \$ man halt
+
+---
