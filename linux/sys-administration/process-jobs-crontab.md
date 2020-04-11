@@ -257,3 +257,65 @@ PRACTICE
 - \$ exit (To exit this recording of scripts) o/p- [Script done, file is logfileactivity.log]
 
 ---
+
+# Recover Root Password / Reset Root password
+
+- Reboot Your computer
+- Press -> e (To edit the grub file) [when bootmanager opens]
+- Now in order to change password
+  - rw init=/sysroot/bin/sh (Last fi -> root=/dev/mapper/centos-root <add_ur_script_here>)
+- Press CTRL+x (Start your computer in single user mode)
+- \# chroot /sysroot
+- \# setenforce 0
+- \# passwd root (Kept my new password as : iamironman)
+- \# touch /.autorelabel
+- \# exit
+- \# reboot
+- Thus, you have reseted your password
+
+REFERENCE: https://unix.stackexchange.com/questions/399880/cannot-reset-root-password-via-grub
+
+---
+
+# SOS Report
+
+- SOS: It is called when is deep trouble and need help
+- Collect and package diagnostic and support data
+- Package name : sosreport -version [sudo apt install sosreport]
+- \$ sudo su -l root
+- \$ sosreport (This will generate the report/logs which you can send to Redhat for help)
+  Please enter the case id that you are generating this report for []: 9000
+  (It has generated at : /tmp/sosreport-ubuntu-9000-2020-04-11-xzgnyeu.tar.xz)
+- \$ ll /tmp/sosreport-ubuntu-9000-2020-04-11-xzgnyeu.tar.xz
+
+---
+
+# Environment Variables
+
+- An environment variable is a dynamic-named value that can affect the way running processes will behave on a computer. They are part of the envirnoment in which a process run.
+- In simple words, set of defined rules and values to build an environment.
+- \$ printenv or env (to view all envirnoment variables)
+- $ echo $SHELL (to view shell)
+- $ echo $PATH (to view all the directories where my paths are defined)
+- $ echo $HOME (home directory)
+- \$ export TEST=1 (To set the env variable called TEST)
+- $ echo $TEST (env variable is set temporary)
+
+## To set env permanently
+
+- \$ sudo su -l root
+- \$ cd ~
+- \$ nano .bashrc
+  TEST='2'
+  export TEST (env variable is set permanently)
+- $ echo $TEST
+
+## To global set env permanently
+
+- \$ cd /etc
+- \$ nano profile
+  TEST='3'
+  export TEST
+- $ echo $TEST
+
+---
