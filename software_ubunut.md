@@ -133,6 +133,9 @@ sudo apt install net-tools -y
 VirtualBox:
 - ubuntu software > VirtualBox
 
+Spotify:
+- ubuntu software > Spotify
+
 ---------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
 
@@ -143,3 +146,5 @@ Speed up your machine for Latest 20.04 -> Install Missing Graphic Drivers
 -------------------------------------------------------------------------------
 
 Reference : https://fossbytes.com/things-to-do-after-installing-ubuntu/
+
+https://askubuntu.com/questions/730754/how-do-i-show-the-git-branch-with-colours-in-bash-prompt
