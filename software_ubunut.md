@@ -126,7 +126,12 @@ Code-Insider
 - sudo dpkg -i code-insiders
 
 
+ifconfig :
+sudo apt install net-tools -y
 
+
+VirtualBox:
+- ubuntu software > VirtualBox
 
 ---------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------

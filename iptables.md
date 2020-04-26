@@ -56,6 +56,10 @@ $ sudo netfilter-persistent start
 Above solution will work partially bcoz, youtube is keep on adding the new servers with different ipaddress, so when we browse www.youtube.com our browser will find some or other ipaddress after pre-long loading
 Soo better use '/etc/hosts' file to block this url
 
+- $ cd /etc
+- $ nano hosts
+- $ 127.0.0.1 www.youtube.com
+
 ---
 
 Was not able to connect to google.meet , google hangout and google dirve
