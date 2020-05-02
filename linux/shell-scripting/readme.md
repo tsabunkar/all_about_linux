@@ -72,3 +72,8 @@
 -r --> file is readable
 
 ---
+
+# For Loops
+
+- running until specified number of variables ex: variable = 10 then run the script 10 times or variable = green, blue, red (then run the script 3 times for each color)
+-

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+for i in wakeup exercise code learn eat sleep
+do 
+echo Tejas $i
+done
