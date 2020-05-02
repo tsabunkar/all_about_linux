@@ -1,0 +1,12 @@
+#!/bin/bash
+
+path=/home/tejas/tejas/play-linux/avengers
+#path=/home/tejas/tejas/play-linux/error
+
+clear
+if [ -e $path ]
+	then
+	echo "file Exist bro"
+	else
+	echo "File does not exist"
+fi

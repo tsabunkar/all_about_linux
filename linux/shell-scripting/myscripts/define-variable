@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Example of defining variable
+
+a=Tejas # a= Tejas (Syntax error)
+b=Sabunkar
+c="Ubuntu 20.04"
+
+echo "My first name is $a"
+echo "My last name is $b"
+echo "I love $c"
+
+
+

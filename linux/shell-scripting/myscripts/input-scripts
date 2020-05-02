@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Author Tejas Sabunkar
+a=`hostname`
+owner=Tejas
+echo Hello, my server name is $a your using $owner machine
+echo # for empty next line
+echo what is your name ?
+read name # Wait for users input and stored in name variable
+echo
+echo Hello $name your connected to $a server
+

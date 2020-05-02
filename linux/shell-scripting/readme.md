@@ -32,3 +32,16 @@
   - ksh (korn shell) [used in solaris os] ==> developed by David korn
 
 ---
+
+# Input/Output in Scripts
+
+- Create script to take input from the user
+  - read
+  - echo
+
+---
+
+# if-then scripts
+
+- 'If' I win the lottery 'then' I will buy a house
+- 'If' I get off early from work 'then' we can go to a concert
