@@ -73,7 +73,22 @@
 
 ---
 
-# For Loops
+# Loops
+
+## for loop
 
 - running until specified number of variables ex: variable = 10 then run the script 10 times or variable = green, blue, red (then run the script 3 times for each color)
--
+
+## do-while loop
+
+- The while statement continually executes a block of statements while a particular condition is true or met
+  - ex : Run a script untill 2pm
+
+---
+
+# CASE Statement Scripts
+
+- If option a selected = do this
+- If option b selected = do that ... etc
+
+---

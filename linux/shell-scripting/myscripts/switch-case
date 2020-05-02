@@ -1,0 +1,19 @@
+#!/bin/bash
+
+
+echo
+echo Please chose one of the options below
+echo
+echo 'a = Display Date and Time'
+echo 'b = List files and directories'
+echo 'c = List users loggedin currently'
+echo 'd = checko system update'
+echo
+	read choice
+	case $choice in
+a) date;;
+b) ls;;
+c) who;;
+d) uptime;;
+*) echo Invalid choice - Bye
+	esac
