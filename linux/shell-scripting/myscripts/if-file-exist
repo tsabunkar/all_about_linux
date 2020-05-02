@@ -4,7 +4,7 @@ path=/home/tejas/tejas/play-linux/avengers
 #path=/home/tejas/tejas/play-linux/error
 
 clear
-if [ -e $path ]
+if [ -e $path ] # Check if file exist in that path
 	then
 	echo "file Exist bro"
 	else
