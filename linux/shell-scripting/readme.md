@@ -92,3 +92,25 @@
 - If option b selected = do that ... etc
 
 ---
+
+# Check servers connectivity
+
+- A script to check the status of remote host
+- check files: check-all-ip, hosts, check-server
+
+---
+
+# Aliases
+
+- Aliases is a very popular command that is used to cut down on lengthy and reptitive commands
+- \$ alias l="ls -al"
+- \$ l (This is alias name for above command)
+- \$ alias pl="pwd; ls"
+- \$ alias tell="whoami; hostname; pwd"
+- \$ alias dir="ls -l | grep ^d" (grep anything which start with d --> To list all directories)
+- \$ dir
+- $ df -h | awk '{print $6}' | cut -c1-4 (list 6th column and substring to 4 characters)
+- $ alias d="df -h | awk '{print \$6}' | cut -c1-4 "
+- \$ alias (To list all the alias which was created)
+- \$ unalias <alias_name_created> (It will remove the alias name which was created)
+- \$ unalias l
