@@ -114,3 +114,49 @@
 - \$ alias (To list all the alias which was created)
 - \$ unalias <alias_name_created> (It will remove the alias name which was created)
 - \$ unalias l
+
+---
+
+# Creating User or Gloabl Aliases
+
+- User = Applies only to a specific user profile
+- Gloab = Applies to everyone who has account on the system
+- User = /home/user/.bashrc (Local aliases)
+- Global = /etc/bash.bashrc (global aliases)
+- \$ hh
+- \$ alias hh="hostname"
+- \$ alias
+  NOTE: Above alias is only present in current terminal session
+
+- NOW if I want to make this alias name to my user account then (local Aliases)
+- \$ nano /home/tejas/.bashrc
+  Write your aliases
+  #---Personal Aliases (start)---
+  alias hh="hostname"
+  #---Personal Aliases (end)---
+
+- NOW if I want to make this alias name to my all user account then (Global Aliases)
+- \$ sudo nano /etc/bash.bashrc
+  Write your aliases
+  #---Personal Aliases (start)---
+  alias whereami="pwd"
+  #---Personal Aliases (end)---
+
+REF: https://askubuntu.com/questions/610052/how-can-i-preset-aliases-for-all-users
+
+---
+
+# Shell History
+
+- \$ history (number of all commands you have ran uptill now from day1)
+- \$ history | more
+- \$ !<history_command_line_number> (You can run the command which you ran in past by rembering the number)
+- \$ !1005
+- \$ history | grep awk (find all the instance of awk)
+- \$ history | grep chmod
+- \$ cat /home/tejas/.bash_history
+- NOTE:
+  - The file where history of your shell commands saved => /home/tejas/.bash_history
+  - To view other users history of shell commands
+    - Become root (su -)
+    - cat /home/tejas/.bash_history
