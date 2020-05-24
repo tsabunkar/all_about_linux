@@ -49,4 +49,23 @@
 - \$ ping www.google.com
 - \$ ifconfig
 - \$ netstat -rnv
+- \$ tcpdump -i <name_of_nic>
+- \$ ifconfig
 - \$ tcpdump -i enp4s0
+
+---
+
+# NIC Information
+
+- NIC = Network Interface Card (PORT where you connect the ethernet cable)
+- NIC can have mutliple ports, Most of the time port is incorrectly reffered as NIC
+- ethtool <name_nic>
+- Other NICs (apart from enp4s0)
+  - lo : The loopback device is a special interface that your computer uses to communicate with itself. It is used mainly for diagnostics and troubleshooting, and to connect to servers running on the local machine
+  - virb0 : The virb0, or "Virtual Bridge 0" interface is used for NAT (Network Address Translation). Virtual environments sometimes use it to connect to the outside network
+- sudo apt install ethtool
+- \$ ethtool --version
+- \$ ifconfig
+- \$ ethtool lo
+- \$ ethtool wlp3s0
+- \$ ethtool enp4s0
