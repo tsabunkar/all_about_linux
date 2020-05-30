@@ -69,3 +69,24 @@
 - \$ ethtool lo
 - \$ ethtool wlp3s0
 - \$ ethtool enp4s0
+
+---
+
+# NIC or Port BONDING
+
+- NIC (Network Interface Card) bonding is also known as Network bonding. It can be defined as the aggregation or combination of multiple NIC into a single bond interface.
+- Its main purpose is to provide high availability and redundancy.
+
+#### NIC Bonding Procedure
+
+- modprobe bonding
+- modinfo bonding
+- Create /etc/sysconfig/network-scripts/ifcfg-bond0
+- Edit /etc/sysconfig/network-scripts/ethernet1
+- Edit /etc/sysconfig/network-scripts/ethernet2
+- Restart Network = systemctl restart network
+<!--
+nic1 -----*>
+              bond0
+nic2 -----*>
+ -->
