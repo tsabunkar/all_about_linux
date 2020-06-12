@@ -7,3 +7,4 @@
 - If you want to monitor your fedora server
   - https://192.168.0.105:9090/
   - login with username and password
+  - https://192.168.0.105:9090/system/terminal
