@@ -113,3 +113,7 @@
   - [If we want to copy file from remote servver to client]
   - \$ rm -f mario
   - \$ sudo scp 192.168.0.105:/home/guest/mario .
+
+---
+
+# rsync - Remote Synchronization
