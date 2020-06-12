@@ -68,13 +68,13 @@
 - \$ systemctl status firewalld
 - \$ systemctl stop firewalld (NOT Recommended in PROD env)
 - \$ systemctl disable firewalld
-- \$ su -l guest
+- \$ sudo su -l guest
 - \$ whoami
 
 ## Steps to Install and Configure FTP on the Client server
 
 - These are steps for Client Server/Server-A - (sabunkar)
-- \$ su -l root
+- \$ sudo su -l root
 - Using ftp clients currently avaliable - Nautilus, FillZilla, sudo apt install ftp
 - \$ cd ~/tejas/play-linux
 - \$ touch superman (we want to send this file to server)
@@ -87,7 +87,7 @@
 - ftp> bye
 
 - Now goto Server
-- \$ su -l guest
+- \$ sudo su -l guest
 - \$ cd ~
 - \$ ls (you can superman had been copied here)
 
@@ -95,3 +95,21 @@
   - Other Network
   - Connect to Server : ftp://192.168.0.105/ > Connect
   - username : guest, password : <pass_guest>
+
+---
+
+# SCP - Secure Copy Protocol
+
+- The secure copy protocol helps to transfer computer files securely from a local to a remote host. It is somewhat similar to the FTP but it adds security and authenication.
+- Default SCP Port = 22 (same as SSH)
+- WHat is the use of SSH ?
+  - SSH is typically used to log into a remote machine and execute commands, but it also supports tunneling, forwarding TCP ports and X11 connections; it can transfer files using the associated SSH file transfer (SFTP) or secure copy (SCP) protocols. SSH uses the client-server model.
+- Client Machine (ubuntu)
+  - \$ sudo su -l tejas
+  - \$ cd ~/tejas/play-linux
+  - \$ touch mario
+  - \$ sudo scp mario 192.168.0.105:/home/guest/ (In your client --> ifconfig enp0s3)
+  - (above syntax - scp <srcfile> 192.168.0.105:/<dest_directory>)
+  - [If we want to copy file from remote servver to client]
+  - \$ rm -f mario
+  - \$ sudo scp 192.168.0.105:/home/guest/mario .
