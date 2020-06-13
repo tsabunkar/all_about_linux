@@ -171,3 +171,85 @@
 - \$ sudo apt update (In ubnutu- apt package manager)
 - \$ sudo apt upgrade
 - Update v/s update : upgrade will delete the old package version and re-install with new package version, wherease update will preserves the old package version and on-top of it install the newer package version
+
+---
+
+# Create local repository from DVD
+
+- If we don't have internet connection, we cannot reach to Redhat remote repository --> so here we can use local repository to install the packages
+- Command : createrepo
+- \$ su -l root
+- \$ mkdir /localrepo
+- \$ cd /localrepo
+- ---Refer video----
+
+---
+
+# Advance Package Management
+
+- Installing Package
+- Upgrading package
+- Deleting package
+- View package details information
+- Identify source or location information
+- Package configuration files
+- \$ rpm -a | grep ksh (corn shell)
+- \$ yum install ksh\* (asteric -> anything related to this package will also be installed)
+- \$ yum install ksh
+- \$ rpm -qa | grep ksh
+- \$ yum remove ksh (Remove the package)
+- Download & Install manually
+  - \$ wget https://download-ib01.fedoraproject.org/pub/fedora/linux/releases/32/Everything/aarch64/os/Packages/k/ksh-2020.0.0-3.fc32.aarch64.rpm (download manually)
+  - \$ rpm -ivh ksh-2020.0.0-3.fc32.aarch64.rpm (Install manually)
+- \$ rpm -qi <name_of_package> (View package details information)
+- \$ rpm -qi ksh-2020.0.0-3.fc32.aarch64.rpm
+- \$ rpm -qa | grep ksh
+- \$ rpm -e ksh (Remove of the package)
+- \$ rpm -qc ksh (Configuration files related to this- ksh package, which can be modified for custom settings/config)
+- \$ which ksh (To know the path of package)
+- \$ cd /usr/bin/
+- \$ rpm -qf ksh (Tells which package this command belongs to ?)
+- \$ which pwd
+- \$ rpm -qf pwd (we can know which package pwd command belongs)
+- \$ which whoami
+- \$ rpm -qf whoami
+
+---
+
+# Rollback Updates and Patches
+
+- Rollback a package or patch
+  - yum install <package_name>
+  - yum history undo <id>
+- Rollback an update
+  - Downgrading a system to minor version (ex- RHEL7.1 to RHEL7.0) is not recommended as this might leave the system in undesired or unstable state
+  - yum update -> Update will preserve the old version package
+  - yum upgrade -> Upgrade will delete oboselete packages
+  - yum history undo <id>
+- \$ yum install screen (Record screen)
+- \$ yum history
+- \$ rpm -qa | grep screen
+- \$ yum history undo 11 (Id of screen)
+- \$ rpm -qa | grep screen (it will be deleted)
+- \$ yum update
+- \$ yum upgrade
+
+---
+
+# SSH and TELNET
+
+- Accept connection from outside
+- Telnet = Un-secured connection between computers
+- SSH = Secured
+- Two type of packages for most of the services
+  - Client package
+  - Server package
+- [.assets/ssh.png]
+- \$ yum install telnet (No need to download)
+- \$ ssh localhost (To login to same server :)
+- \# logout
+- \$ grep sshd (/usr/sbin/sshd -> process which is listening to all the incoming packets)
+- \$ systemctl stop sshd ( to stop this service/daemon)
+- \$ grep sshd
+- \$ systemctl start sshd
+- \$ grep sshd
