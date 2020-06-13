@@ -92,3 +92,7 @@ nic2 -----*>
  -->
 
 ---
+
+# Check Internet Speed using CLI without actual donwloading any package
+
+- curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python3 -

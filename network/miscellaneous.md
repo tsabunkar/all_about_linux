@@ -140,3 +140,22 @@
   - \$ cd ~/tejas/play-linux [In ubuntu]
   - \$ rsync -avzh root@192.168.0.105:/root/anaconda-ks.cfg . [In ubuntu]
   - \$ ll anaconda-ks.cfg
+
+---
+
+# System Updates and Repos
+
+- yum (CentOs/Fedora), apt-get / apt (Linux)
+- rpm (Red hat package manager)
+- Difference b/w rpm and yum :- rpm is used to install the package which you have already in your loacl machine wherease, yum is used to download the package from internet and then install it as-well. (So rpm is mainly used in env where we don't have internt access)
+- \$ yum install ntp
+- \$ rpm -qa (all packages installed)
+- \$ rpm -qa | wc -l
+- \$ rpm -qa | grep bind (DNS package)
+- \$ yum install bind
+- \$ rpm -ihv <location_of_rpm> (to install the package using rpm)
+- \$ rpm -e <package_name> (to remove/uninstall a pakage)
+- \$ rpm -e bind (we can also remove/uninstall packages that was install by yum/rpm)
+- \$ yum remove bind (same as rpm to remove/uninstall a package from local machine)
+
+---
