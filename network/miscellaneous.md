@@ -159,3 +159,15 @@
 - \$ yum remove bind (same as rpm to remove/uninstall a package from local machine)
 
 ---
+
+# System Upgrade/Patch Management
+
+- 2 types of upgrade
+  - Major version upgrade - 5,6,7 (\$ cat /etc/fedora-release <== To check version of fedora)(\$ cat /etc/redhat-release)
+  - Minor version upgrade - 7.3, 7.4
+- NOTE: we can easily do minor version update but for major version update (LTS) we should take the backup of our file then procceed which is cumbersome
+- \$ yum update
+- \$ yum upgrade
+- \$ sudo apt update (In ubnutu- apt package manager)
+- \$ sudo apt upgrade
+- Update v/s update : upgrade will delete the old package version and re-install with new package version, wherease update will preserves the old package version and on-top of it install the newer package version
