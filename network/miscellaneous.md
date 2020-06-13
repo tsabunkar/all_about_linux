@@ -117,3 +117,26 @@
 ---
 
 # rsync - Remote Synchronization
+
+- rsync is a utility for efficiently transferring and synchronizing files within the same computer or to a remote computer by comparing the modification times and size of files.
+- rsync is lot faster than ftp or scp
+- This utility is mostly used to backup the files and directories from one server to another
+- Default rsync Port = 22 (same as SSH protocol)
+- Syntax of rsync command : rsync otions <source_path> <destination_path>
+- Send the File within the same machine using rsync
+  - \$ cd ~/tejas/play-linux
+  - \$ rsync --help (Check rsync is avaliable- \$ sudo dpkg --get-selections | grep rsync )
+  - \$ tar cvf dump.tar . (Creating the backup of current directory into- tar file )
+  - \$ mkdir /tmp/backup (Place where want to store/transfer the above backup)
+  - \$ rsync -zvh dump.tar /tmp/backup
+- rsync a directory on the local machine
+  - \$ cd ~/tejas/play-linux
+  - \$ rsync -azvh foo /tmp/backup
+- rsync a file to a remote machine/server
+  - Goto Remote server (fedora-server) run - ifconfig , ifconfig enp0s3 -> inet 192.168.0.105
+  - mkdir /tmp/backup/ (Create a direcotry where you want to store the txed file from src) [In fedora]
+  - rsync -avz dump.tar root@192.168.0.105:/tmp/backup/ [In ubuntu]
+- rsync a file from remote machine
+  - \$ cd ~/tejas/play-linux [In ubuntu]
+  - \$ rsync -avzh root@192.168.0.105:/root/anaconda-ks.cfg . [In ubuntu]
+  - \$ ll anaconda-ks.cfg

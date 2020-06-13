@@ -46,4 +46,13 @@
 - If you want to run vsocde with super-user privilege : \$ sudo code --user-data-dir="/etc" ("etc" -> absolute file path)
 - Switch between users : su --help, \$ su --login guest
 - Install .deb file :\$ sudo apt install ./<file_name> (Naviagate to that deb file)
-- To open folder with GUI from Terminal: \$ nautilus <path> 
+- To open folder with GUI from Terminal: \$ nautilus <path>
+- TO check software is installed:
+  - \$ sudo dpkg --get-selections | grep rsync (Ubuntu)
+  - \$ rpm -qa | grep rsync (Redhat OS- Centos/Fedora)
+
+---
+
+Reference:
+
+- https://www.cyberciti.biz/faq/show-display-get-installed-packages-software-list-linux-freebsd-openbsd/
