@@ -320,3 +320,64 @@
         - \$ nslookup 192.168.1.240 (Verify Reverse Lookup)
         - \$ nslookup 192.168.1.241
 - Resotre your VM from the previous Snapshot if you want to remove above configuration.
+
+---
+
+# Hostname/IP Lookup
+
+- Command used for DNS lookup
+  - nslookup
+  - dig
+- These command used to resolve- hostname to IP, IP to hostname , hostname to hostname
+- \$ nslookup
+- \# www.google.com
+- \# exit
+- \$ nslookup www.hotmail.com
+- \$ dig www.hotmail.com (more details compared to nslookup)
+
+---
+
+# Network Time Protocol (NTP)
+
+- NTP purpose is to synchronize time with another server
+- NTP Port : 123
+- File : /etc/ntp.conf
+- Service: \$ systemctl restart ntpd
+- command : ntpd
+- \$ rpm -qa | grep ntp
+- \$ yum install ntp (if you dont have this ntp package)
+- \$ nano /etc/ntp.conf (Add line --> server 8.8.8.8) [This ip is for google]
+- \$ systemctl restart ntpd
+- \$ systemctl status ntpd
+- \$ ps -ef | grep ntp
+- \$ ntpq
+- \# peers (You can see my local m/c server is getting its time from - dns.google)
+- \$ systemctl stop ntpd
+- \$ ps -ef | grep ntp
+
+---
+
+# chronyd (New version of NTP)
+
+- chronyd - It is deamon which is to replace NTP daemon
+- Purpose of chronyd is for Time synchronization (Sync our local time with that of remote time which can be Redhat/Google servers)
+- Package name : chronyd
+- Config file : /etc/chronyd.conf
+- Log file : /var/log/chrony
+- Service : systemctl start chronyd
+- Command : chronyc
+- \$ sudo su -l root
+- \$ rpm -qa | grep chrony
+- \$ ll /etc/chrony.conf
+- \$ nano /etc/chrony.conf
+- ( Add line ==> server 8.8.8.8)
+- \$ systemctl status ntpd
+- \$ systemctl stop ntpd
+- \$ systemctl restart ntpd
+- \$ ps -ef | grep ntpd
+- \$ chronyc
+- \# help
+- \$ nano /etc/chrony.conf (remove the changes)
+- \$ systemctl restart ntpd
+
+---
