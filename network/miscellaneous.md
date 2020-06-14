@@ -381,3 +381,26 @@
 - \$ systemctl restart ntpd
 
 ---
+
+# Sendmail
+
+- This service - help to send and recieve emails
+- Files :
+  - /etc/mail
+  - /etc/mail/sendmail.mc
+  - /etc/mail/sendmail.cf
+- Service :
+  - systemctl restart sendmail (It is still the dameon but doesn't have 'd' at end)
+- Command : mail -s "subject line" email@domain.com
+- \$ rpm -qa | grep sendmail
+- \$ yum install sendmail
+- \$ yum install sendmail-cf
+- \$ cd /etc/mail
+- \$ nano /etc/mail/sendmail.mc
+- (Modifiy --> dnl define(`SMART_HOST',`smtp.your.provider')dnl)
+- \$ systemctl restart sendmail
+- \$ systemctl status sendmail
+- \$ mail -s "mail setup" tsabunkar@gmail.com [Error : -bash: mail: command not found --> yum -y install mailx]
+- (Write mail body) [Ctrl+D] -> quite mail CLI and Send
+
+---
