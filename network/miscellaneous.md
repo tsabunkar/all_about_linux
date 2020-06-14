@@ -253,3 +253,70 @@
 - \$ grep sshd
 - \$ systemctl start sshd
 - \$ grep sshd
+
+---
+
+# DNS - Domain Name System
+
+- Translate hostname(www.linked.com) to Ip Address(144.2.22.0), Ip Address to hostname and Hostname to Hostname.
+- Hotname to Ip Address --called--> A Record
+- Ip Address to Hotname --called--> PTR Record
+- Hotname to Hotname --called--> CNAME Record
+- File to configure DNS
+  - /etc/named.conf
+  - /var/named/
+- Service
+  - systemctl restart named (named is a demon/service)
+- Setting up DNS to my local IP Address on enp0s3
+  - Take snapshot of ur VM
+  - \$ ifconfig (enp0s3 --> IP : 192.168.0.105)
+  - \$ yum install bind bind-utils (Install DNS package )
+  - \$ rpm -qa | grep bind
+  - Configure DNS Server
+    - \$ cd /etc
+    - \$ ll named.conf
+    - \$ cp /etc/named.conf ./named.conf.org
+    - \$ ll named.con\*
+    - \$ nano /etc/named.conf
+    - (listen-on port 53 { 127.0.0.1; 192.168.0.105;}; <== Add IP Adress)
+    - (Make changes as shown in zone ==> [./config/named.conf])
+    - Create Zone files:
+      - \$ cd /var/named
+      - \$ touch forward.lab (These are the zone files, we keep forward lookup entries that is If want to resolve hostname to Ip go this entry/file )
+      - \$ touch reverse.lab (These are the zone files, we keep reverse lookup entries that is If want to resolve Ip to hostname go this entry/file)
+      - \$ nano forward.lab
+      - (Copy the content from [./config/forward.lab])
+      - \$ nano reverse.lab
+      - (Copy the content from [./config/reverse.lab])
+      - \$ systemctl start named
+      - \$ systemctl enable named
+      - \$ systemctl stop firewalld (Disable firewalld)
+      - \$ systemctl disable firewalld
+      - Configuring Permissions, Ownership, and SELinux
+        - \$ chgrp named -R /var/named
+        - \$ chown -v root:named /etc/named.conf
+        - \$ restorecon -rv /var/named
+        - \$ restorecon /etc/named.conf
+      - Test DNS configuration and zone files for any syntax errors
+        - \$ named-checkconf /etc/named.conf
+        - \$ named-checkzone lab.local /var/named/forward.lab
+        - \$ named-checkzone lab.local /var/named/reverse.lab
+      - Add DNS Server Information to network file
+        - \$ ifconfig
+        - \$ ifconfig enp0s3
+        - \$ nano /etc/sysconfig/network-scripts/ifcfg-enp0s3
+        - (Add -> DNS=192.168.0.105)
+      - Restart network service
+        - \$ systemctl restart network [Error: Failed to restart network.service: Unit network.service not found]
+        - \$ systemctl restart NetworkManager.service
+      - Modify /etc/resolv.conf
+        - \$ nano /etc/resolv.conf
+        - (Replace your nameserver from - nameserver 192.168.0.1 to ==> nameserver 192.168.0.105)
+      - Test DNS server
+        - \$ dig masterdns.lab.local (dig/nslookup are same to veirfy the hostname and IP mapping)
+        - \$ nslookup masterdns.lab.local (Verify Forward Lookup)
+        - \$ nslookup clienta.lab.local
+        - \$ nslookup clientb.lab.local
+        - \$ nslookup 192.168.1.240 (Verify Reverse Lookup)
+        - \$ nslookup 192.168.1.241
+- Resotre your VM from the previous Snapshot if you want to remove above configuration.

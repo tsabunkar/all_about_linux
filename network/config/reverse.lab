@@ -1,0 +1,14 @@
+$TTL 86400
+@   IN SOA  masterdns.lab.local. root.lab.local. (
+    2011071001  ;Serial
+    3600        ;Refresh
+    1800        ;Retry
+    604800      ;Expire
+    86400       ;Minimum TTL
+)
+@   IN NS   masterdns.lab.local.
+@   IN PTR  lab.local.
+masterdns   IN A    192.168.0.105
+158 IN PTR  masterdns.lab.local.
+240 IN PTR  clienta.lab.local.
+241 IN PTR  clientb.lab.local.
