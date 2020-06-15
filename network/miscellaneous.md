@@ -404,3 +404,42 @@
 - (Write mail body) [Ctrl+D] -> quite mail CLI and Send
 
 ---
+
+# Web Server (httpd)
+
+- Service or Package name -> httpd
+- Files :
+  - /etc/http/conf/httpd.conf
+  - /var/www/html/index.html (Main page of the web-server will be located inside html directory)
+- Service:
+  - systemctl restart httpd
+  - systemctl enable httpd
+- Log files : /var/log/httpd/
+- \$ rpm -qa | grep http\*
+- \$ yum install httpd
+- \$ cd /etc/httpd/conf
+- \$ ll
+- \$ more httpd.conf
+- \$ cd /var/www/html
+- \$ touch index.html
+- \$ nano index.html (write the code for your web page)
+- \$ systemctl restart httpd
+- \$ ifconfig
+- \$ ifconfig enp0s3 (192.168.0.105)
+- (Since your using Bridge Adapter) - http://192.168.0.105/ (in you Ubuntu Browser- Another server)
+- [If not work: $ systemctl stop firewalld]
+
+---
+
+# Central Logger (rsyslog)
+
+- Purpose of this server is - to generate logs or collect logs from other servers
+- Service/package name : rsyslog
+- Configuration file : /etc/rsyslog.conf
+- Service
+  - systemctl restart rsyslog
+  - systemctl enable rsyslog
+- \$ rpm -qa | grep rsyslog
+- \$ yum install rsyslog (if not there)
+- \$ nano /etc/rsyslog.conf
+- \$ systemctl restart rsyslog
