@@ -506,3 +506,53 @@
 - \$ more /etc/nsswitch.conf
 
 ---
+
+# Trace Network Traffic (traceroute)
+
+- The traceroute command is used in Linux to map the journey that a packet of information undertakes from its source to its destination.
+- One use for traceroute is to locate when data loss occurs throughout a network, which could signify a node that's down
+- Because each hop in the record reflects a new server or router between the originating PC and the intended target, reviewing the results of a traceroute scan also lets you identify slow points that may adversely affect your network traffic
+- Example:
+  - \$ traceroute www.google.com (start with your Gateway then goto google ip -> 172.217.26.196)
+  - \$ netstat -rnv (To know your gateway)
+
+---
+
+# How to open image file
+
+- We can open a text file - vi, nano, etc
+- We can open image using CLI
+  - \$ yum install ImageMagick
+- Ref : ( https://www.ostechnix.com/how-to-display-images-in-the-terminal/)
+
+---
+
+# Access Remote Server without Password (SSH-Keys)
+
+- Two reasons to access a remote machine without password
+  - Reptitive login
+  - Automation through scripts
+- Keys are generated at user level
+  - guest
+  - root
+- [./assets/ssh-key.png]
+- Example: First time employee join a new office he is only allowed to enter the office when he sign the registry at gate/entry level but from next day of office he will provided by ID card so that he should not always sign the registry at gate (this ID card --think---> SSH Keys)
+- Steps
+- \$ ifconfig (Client m/c - Ubuntu)
+- \$ ifconfig wlp3s0 (Ubuntu) [Ipaddr- 192.168.0.106]
+- \$ ifconfig (Server m/c - Fedora)
+- \$ ifconfig enp0s3 (Fedora) [Ipaddr- 192.168.0.105]
+- \$ ssh root@<ip_addr_server> (from client- Ubuntu)
+- \$ ssh root@192.168.0.105 (Ubuntu)
+- \$ sshkeygen (Client machine - Ubuntu)
+- \$ cat /home/tejas/.ssh/id_rsa
+- (Now we need to copy this generated public key from client to server)
+  - \$ ssh-copy-id root@<ip_addr_server> (Ubuntu)
+  - \$ ssh-copy-id root@192.168.0.105 (Ubuntu)
+  - \$ ssh root@192.168.0.105 (Ubuntu) [ Now login Again - This time it will not prompt to enter password for every login]
+  - \$ ssh -l root 192.168.0.105
+  - \$ ssh -l guest 192.168.0.105
+- (Optional) Inorder To verify keys are copied correctly from client to server
+  - \$ cd /root/.ssh/ (Fedora)
+  - \$ ll
+  - \$ cat authorized_keys
