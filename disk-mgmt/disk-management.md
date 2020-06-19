@@ -32,3 +32,21 @@
 - It is backward compatible with SysV init scripts used by previous version of RedHat Linux including RHEL 6
 - Every system administrator needs to understand the boot process of an OS in order to troubleshoot effectively
 - [./assets/boot-process.png]
+
+---
+
+# Message of the Day
+
+- message of the day file location, user will see when they login in to the linux machine
+  - \$ nano /etc/motd (Add the static text)
+- Steps to Create customize Message text other than default:
+  - Create a new file in /etc/profile.d/motd.sh (copy file content from [./assets/motd.sh])
+  - Add desired commands in motd.sh file
+  - Modify the /etc/ssh/sshd_config file to edit
+    - \$ cp /etc/ssh/sshd_config /etc/ssh/sshd_config.org
+    - \$ nano /etc/ssh/sshd_config
+    - PrintMotd yes (Modifiy - PrintMotd no)
+  - Restart sshd service
+    - systemctl restart sshd.service
+  - \$ reboot (fedora)
+  - \$ ssh -l root 192.168.0.105 (ubutu client)
