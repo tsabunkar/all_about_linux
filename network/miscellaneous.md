@@ -443,3 +443,45 @@
 - \$ yum install rsyslog (if not there)
 - \$ nano /etc/rsyslog.conf
 - \$ systemctl restart rsyslog
+
+---
+
+# Linux OS Hardening - (OS Hardening : System Secure)
+
+- User Account
+- Remove un-wanted packages
+- Stop un-used services
+- Check on listening Ports
+- Secure SSH confifuration
+- Enable firewall (iptables/firewalld) (old version of firewall- iptables, new version of firewall - firewalld ) [Tell the firewall to accept only particular PORT no and filter other traffic]
+- Enable SELinux (Security Enhance Linux) --> Control access of service/application
+- Change Listening Services Port Numbers
+- Keep your Os upto date (updated security patches)
+- \$ cat /etc/passwd
+- \$ chage -l root (Last password change)
+- \$ chage -l guest
+- \$ chage --help
+- \$ cat /etc/shadow
+- \$ cat /etc/login.defs | more
+- \$ cd /etc/pam.d
+- \$ more system-auth
+- \$ rpm -qa (list of all packages)
+- \$ rpm -qa | wc -l (total no of packages)
+- \$ rpm -e <package_name> (to remove a package)
+- \$ systemctl -a (daemon/service is active and inactive)
+- \$ netstat -tunlp (all the listening PORT which are active)
+- \$ cd /etc/ssh
+- \$ more sshd_config (this file can be modified - to make SSH more secure ---tosecure--> Change PORT, PermitRootLogin make this paramter as No)
+- \$ firewall-config (open GUI) [sudo apt install firewall-config]
+- \$ firewall-cmd --help (CLI Tool)
+- \$ more /etc/sysconfig/iptables-config (old version to modifiy firewall)
+- \$ more /etc/firewalld/firewalld.conf (new version to modifiy firewall)
+- \$ sestatus (To Check SE Linux is enabled)
+- \$ cd /etc/sysconfig
+- \$ more selinux (To enable/disable SE Linux)
+- \$ stat <file_name> (gives status of that file)
+- \$ cd ~/play
+- \$ stat sample.pdf
+- \$ man chcon
+- \$ man checkpolicy
+- (Keep update the security realted to packages)
