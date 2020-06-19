@@ -485,3 +485,24 @@
 - \$ man chcon
 - \$ man checkpolicy
 - (Keep update the security realted to packages)
+
+---
+
+# OpenLDAP Installation
+
+- What is OpenLDAP
+- OpenLDAP Service : slapd
+- Start/Stop the service:
+  - systemctl start slapd
+  - systemctl enable slapd
+  - systemctl stop slapd
+- Config file : /etc/openldap/slapd.d
+- \$ yum install _openldap_
+- \$ systemctl start slapd
+- \$ systemctl status slapd
+- \$ ps -ef | grep slapd
+- \$ cd /etc/openldap/slapd.d/
+- \$ ls
+- \$ more /etc/nsswitch.conf
+
+---

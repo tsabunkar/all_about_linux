@@ -50,6 +50,12 @@
 - TO check software is installed:
   - \$ sudo dpkg --get-selections | grep rsync (Ubuntu)
   - \$ rpm -qa | grep rsync (Redhat OS- Centos/Fedora)
+- To know system architecture:
+  - \$ uname -a
+  - \$ arch
+  - \$ dpkg --print-architecture (OS is 64-bit - amd64 and OS is 32-bit - i386 )
+  - \$ getconf LONG_BIT
+  - \$ file /sbin/init
 
 ---
 
