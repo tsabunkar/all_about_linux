@@ -143,3 +143,47 @@
 - \$ swapoff /newswap (to delete swap area)
 - \$ rm /newswap
 - \$ free -m
+
+---
+
+# RAID
+
+- RAID (Redundant Array of Independent Disks) - if one disk dies, we can use another disk
+- Types of RAID
+  - RAID0
+  - RAID1
+  - RAID5
+- [./assets/raid.png]
+
+---
+
+# File System Check
+
+- fsck -> There from Unix Area, xfs_repai command-> repairs xfs file system
+- Linux fsck utility is used to check and repair linux filesystems ext2, ext3, ext4, etc
+- Linux xfs_repair utility is used to check and repair linux filesystems for xfs filesystem type
+- Depending on when was the last time a file system was checked, the system runs the fsck during boot time to check wheather the file system is in consistent state
+- System admin could also run it manually when there is a problem with the filesystems
+- To make sure to execute the fsck on an unmounted file systems to avoid any data corruption issues
+- Force a filesystem check even if its clean using option -> -f
+- Attempt to fix detected problems automatically using option -> -y
+- The xfs_repair utility is highly scalable and is designed to repair even very large file systems with many inodes efficiently. Unlike other Linux file systems, xfs_repair does not run at boot time
+- The following are the possible exit codes for fsck command:
+  - 0 : No errors
+  - 1 : Filesystem errors corrected
+  - 2 : System should be rebooted
+  - 4 : Filesystem errors left uncorrected
+  - 8 : Operational error
+  - 16 : Usage or syntax error
+  - 32 : fsck canceled by user request
+  - 128 : Shared-library error
+- \$ df -h
+- $ df -h | awk '{print $1}'
+- \$ df -T (Tells the file types)
+- \$ fsck /dev/sda1
+- \$ xfs_repair /dev/sda1 (Note : you need to unamount the file and then run this command)
+- \$ unamount /data (Copy this befor unamounting)
+- \$ xfs_repair /dev/sda1
+- $ echo $? (To check if the previous command run successfully -> 0 = successful, 1 = error)
+- \$ mount /dev/sda1 /data (mounting back)
+- \$ df -h

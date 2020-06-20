@@ -56,6 +56,7 @@
   - \$ dpkg --print-architecture (OS is 64-bit - amd64 and OS is 32-bit - i386 )
   - \$ getconf LONG_BIT
   - \$ file /sbin/init
+- $ echo $? (To check if the previous command run successfully -> 0 = successful, 1 = error)
 
 ---
 
