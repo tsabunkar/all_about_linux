@@ -187,3 +187,28 @@
 - $ echo $? (To check if the previous command run successfully -> 0 = successful, 1 = error)
 - \$ mount /dev/sda1 /data (mounting back)
 - \$ df -h
+
+---
+
+# System backup (dd command)
+
+- Many way we can do system backup, one way -> dd command
+- 5 diffrent types of backups:
+  - System backup (entire image using tools such as acronis, veeam, commvault etc)
+  - Application backup (3rd party application backup solution)
+  - Database backup (Oracle datagaurd, SQL backup etc)
+  - Filesystem backup (tar, gzip directories etc)
+  - Disk backup or disk cloning (dd command)
+- dd is a command line utility for Unix and Unix-like os whose primary purpose is to convert and copy files
+- As a result, dd can be used for tasks such as backing up the boot sector of a hard drive, and obtaining a fixed amount of random data
+- To backup or clonw an entire hard disk to another hard disk connected to the same system, execute the dd command as shown:
+  - dd if=<source_file> of=<target_file> [Options](sytnax)
+  - dd if=/dev/sda of=/dev/sdb (Example) [Copying the entier disk to destn/target]
+- To backup/copy the disk partition
+  - dd if=/dev/sda1 of=/root/sda1.img (backup file is named as sda1.img)
+- Restoring this image file to other machine after copying the .img
+  - dd if=/root/sda1.img of=/dev/sdb3
+- \$ df -h
+- \$ dd if=/dev/sda1 of=/data/boot.img (copying from parition to file system)
+- \$ ls -l /data/boot.img
+- \$ dd if=/data/boot.img /dev/sda1 (To recovery file system, if something error happend)
