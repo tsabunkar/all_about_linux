@@ -212,3 +212,33 @@
 - \$ dd if=/dev/sda1 of=/data/boot.img (copying from parition to file system)
 - \$ ls -l /data/boot.img
 - \$ dd if=/data/boot.img /dev/sda1 (To recovery file system, if something error happend)
+
+---
+
+# NFS (Network File System)
+
+- Sharing files with other computer, It is called NAS
+- NFS Stands for Network file system, a file system developed by Sun Microsystems, Inc (Developed by- Solaris Unix OS)
+- It is a client/server system that allows users to access files across a network and treat them as if they resided in a local file directory
+- For ex- If you were using a computer linked to a second computer via NFS, you could access files on the second computer as if they resided in a directory on the first computer. This is accomplished through the processes of exporting (the process by which an NFS server provided remote clients with access to its files) and mounting (the process by which client map NFS shared filesystem)
+- Below example- we will consider the server which will expose the files and client which will consume this file and show this shared direcotry as a mounted disk
+
+## Steps for NFS Server Configuration
+
+- Install NFS packages : yum install nfs-utils libnfsidmap
+- Once the packages are installed, enable and start NFS Services
+  - systemctl enable rpcbind (enable -> to start at boot time)
+  - systemctl enable nfs-server
+  - systemctl start rpcbind
+  - systemctl start nfs-server
+  - systemctl start rpc-statd
+  - systemctl start nfs-idmapd
+- Create NFS share directory and assign permissions
+  - mkdir /mypretzels
+  - chmod a+rwx /mypretzels
+- Modify /etc/exports file to add new shared filesystem
+  - /mypretzels 192.168.12.7(rw,sync,no_root_squash) = for only 1 host
+  - [ /mypretzels --> NFS share, 192.168.12.7 -> IP Address of client machine (u can put \* to share with all), rw -> Read/Write, sync -> All changes to the according filesystem are immediately flushed to disk; the respective write operations are being waited for, no_root_squash -> root on the client machine will have the same level of access to the files on the system as root on the server ]
+  - /mypretzels \* (rw,sync,no_root_squash) = for everyone
+- Export the NFS filesystem
+  - exportfs -rv
