@@ -50,3 +50,56 @@
     - systemctl restart sshd.service
   - \$ reboot (fedora)
   - \$ ssh -l root 192.168.0.105 (ubutu client)
+
+---
+
+# Storage
+
+- 3 types of storage
+  - Local Storage (inside of your computer)
+  - SAN (Storage Area Network) [Attach to computer via fiber cable]
+  - NAS (network Attached Storage) [Attached to computer via NFS, Ip,etc NOTE: in windows is attached via- Samba]
+
+---
+
+# Disk Partition
+
+- Commands for disk partition
+  - df
+  - fdisk
+- \$ ssh -l root 192.168.0.105
+- \$ df
+- \$ df -h (human readable)
+- \$ fdisk -l
+
+---
+
+# Add disk and Creating Partition
+
+- Purpose of adding disk - Out of space, Additional Apps, etc
+- Add disk in VM
+  - VirtualBox
+  - Select the VM (Make sure it is not running)
+  - Settings
+  - Storage > Controller
+  - (there is + icon) > (select) Hard disk
+  - VDI
+  - Dynamically allocated
+  - File location and size - 2GB > Create
+  - Ok
+  - (run VM)
+  - \$ df - h
+  - \$ fdisk -l
+  - \$ fdisk /dev/sdb
+  - /# help
+  - /# n (for new partition)
+  - (default)
+  - /# w (write the partition table)
+  - \$ mkfs.xfs /dev/sdb1 (to make the file system- xfs)
+  - \$ mkdir /data
+  - \$ mount /dev/sdb1 /data (mounting partition to particular file system)
+  - \$ nano /etc/fstab (add entry about this new partition - /dev/sdb1 /data xfs defaults 0 0)
+  - \$ unmount /data (To unmount)
+  - \$ mount -a ( to mount back)
+
+---
