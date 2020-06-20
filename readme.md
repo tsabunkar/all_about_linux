@@ -748,3 +748,14 @@ EX :
 - \$ cat sepag
 
 ---
+
+# Exposure to other technologies:
+
+- OS : Windows, MacOS, Linux, Unix
+- Hardware : Lenovo, Mac
+- Montoring Tools: Nagios, Splunk, Zenoss
+- Cloud: Amazon EC2
+- OS tools: Redhat Satellite, kickstart, Active Directory, DNS, Puppet, etc
+- DB: SQL, informix, NoSQL etc
+
+---

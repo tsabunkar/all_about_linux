@@ -103,3 +103,43 @@
   - \$ mount -a ( to mount back)
 
 ---
+
+# Logical Volume Management (LVM)
+
+- LVM allows disks to be combined together
+- [./assets/lvm.png]
+
+- Add disk and Create LVM partition
+- [./assets/lvm-2.png]
+
+- Add and Extend disk using LVM
+
+---
+
+# Add/Extend SWAP Space
+
+- what is swap ?
+  - Swap space in linux is used when the amount of physical memory (RAM) is full.
+  - if the system needs more memory resources and the RAM is full, inactive pages in memory are moved to the swap space.
+  - While swap space can help machines with a small amount of RAM, it should not be considered a replacement for more RAM
+  - Swap space is located on hard drives, which have a slower access time than physical m'my
+- Recommended swap size = Twice the size of RAM
+- Commands :
+  - dd
+  - mkswap
+  - swapon or swapoff
+- \$ free -m (how much memeory we have)
+- (Increase size of swap)
+- \$ sudo su -l root
+- \$ dd if=/dev/zero of=/newswap bs=1M count=1024 (takeing the disk parition and allocation to swap area, bs -> byte size, count -> total size of file)
+- \$ cd /
+- \$ ls -ltr
+- \$ chmod go-r newswap or chmod 600 newswap
+- \$ mkswap /newswap (Make that newswap file as type - swap)
+- \$ swapon /newswap (turn on the swap)
+- \$ free -m
+- \$ nano /etc/fstab (new line -> /newswap swap swap defaults 0 0)
+- (reboot)
+- \$ swapoff /newswap (to delete swap area)
+- \$ rm /newswap
+- \$ free -m
