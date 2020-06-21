@@ -223,22 +223,48 @@
 - For ex- If you were using a computer linked to a second computer via NFS, you could access files on the second computer as if they resided in a directory on the first computer. This is accomplished through the processes of exporting (the process by which an NFS server provided remote clients with access to its files) and mounting (the process by which client map NFS shared filesystem)
 - Below example- we will consider the server which will expose the files and client which will consume this file and show this shared direcotry as a mounted disk
 
-## Steps for NFS Server Configuration
+## Steps for NFS Server Configuration (Fedora)
 
-- Install NFS packages : yum install nfs-utils libnfsidmap
+- \$ ssh -l root 192.168.0.105
+- \$ rpm -qa | grep nfs
+- Install NFS packages : \$ yum install nfs-utils libnfsidmap
 - Once the packages are installed, enable and start NFS Services
-  - systemctl enable rpcbind (enable -> to start at boot time)
-  - systemctl enable nfs-server
-  - systemctl start rpcbind
-  - systemctl start nfs-server
-  - systemctl start rpc-statd
-  - systemctl start nfs-idmapd
+  - \$ systemctl enable rpcbind (enable -> to start at boot time)
+  - \$ systemctl enable nfs-server
+  - \$ systemctl start rpcbind
+  - \$ systemctl start nfs-server
+  - \$ systemctl start rpc-statd
+  - \$ systemctl start nfs-idmapd
 - Create NFS share directory and assign permissions
-  - mkdir /mypretzels
-  - chmod a+rwx /mypretzels
+  - \$ cd /
+  - \$ mkdir /mypretzels (Creating shared file directory)
+  - \$ ll
+  - \$ chmod a+rwx /mypretzels
+  - \$ cd /mypretzels
+  - \$ touch a b c
+  - \$ echo "Hello there" > kramer
 - Modify /etc/exports file to add new shared filesystem
-  - /mypretzels 192.168.12.7(rw,sync,no_root_squash) = for only 1 host
-  - [ /mypretzels --> NFS share, 192.168.12.7 -> IP Address of client machine (u can put \* to share with all), rw -> Read/Write, sync -> All changes to the according filesystem are immediately flushed to disk; the respective write operations are being waited for, no_root_squash -> root on the client machine will have the same level of access to the files on the system as root on the server ]
-  - /mypretzels \* (rw,sync,no_root_squash) = for everyone
+  - \$ cp /etc/exports /etc/exports.org
+  - \$ nano /etc/exports
+  - (copy the content from [.assets/exports])
 - Export the NFS filesystem
-  - exportfs -rv
+  - \$ exportfs -rv (r -> publish everything, v -> verbose)
+
+## Steps for NFS Client Configuration (Have another -> Linux Machine to act as client)
+
+- Install NFS packages
+  - \$ yum install nfs-utils rpcbind
+- Once the packages are installed enable and start rpcbind service
+  - \$ service rpcbing start
+- Make sure firewalld or iptables stopped (if running)
+  - \$ ps -ef | egrep "firewall|iptable"
+- Show mount from the NFS server
+  - \$ showmount -e 192.168.1.5 (NFS Server IP)
+- Create a mount point
+  - \$ mkdir /mnt/app
+- Mount the NFS filesystem
+  - \$ mount 192.168.1.5:/mypretzels /mnt/kramer
+- Verify mounted filesystem
+  - \$ df -h
+- To unmount
+  - \$ unmount /mnt/kramer

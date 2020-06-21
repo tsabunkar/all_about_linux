@@ -1,0 +1,21 @@
+/mypretzels *(rw,sync,no_root_squash)
+
+
+
+------Copy only above line------------
+
+
+NOTES : 
+
+- /mypretzels 192.168.12.7(rw,sync,no_root_squash) <--- for only 1 host
+
+- [ /mypretzels --> NFS share, 192.168.12.7 -> IP Address of client machine
+ (u can put \* to share with all), rw -> Read/Write, sync -> All changes to the 
+ according filesystem are immediately flushed to disk; the respective write
+ operations are being waited for, no_root_squash -> root on the client machine
+ will have the same level of access to the files on the system as root on the
+ server ]
+
+- /mypretzels \*(rw,sync,no_root_squash) <--- for everyone
+
+---------------------------------------
