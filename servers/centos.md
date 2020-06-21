@@ -22,3 +22,5 @@
         - Check - Reformat
     - Done
 - Software Selection > (select) Server > Additional S/w (select) Basic Web Server
+- Reboot
+- NOTE: Once installation is completed please change the path of ISO Image from which it was installed of (or) else boot loader will always show the Installation Screen from Live-CD --> Bascially Path show be in-accessible
