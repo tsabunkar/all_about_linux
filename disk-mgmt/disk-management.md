@@ -223,7 +223,7 @@
 - For ex- If you were using a computer linked to a second computer via NFS, you could access files on the second computer as if they resided in a directory on the first computer. This is accomplished through the processes of exporting (the process by which an NFS server provided remote clients with access to its files) and mounting (the process by which client map NFS shared filesystem)
 - Below example- we will consider the server which will expose the files and client which will consume this file and show this shared direcotry as a mounted disk
 
-## Steps for NFS Server Configuration (Fedora)
+## Steps for NFS Server Configuration (Fedora-192.168.0.105)
 
 - \$ ssh -l root 192.168.0.105
 - \$ rpm -qa | grep nfs
@@ -242,29 +242,42 @@
   - \$ chmod a+rwx /mypretzels
   - \$ cd /mypretzels
   - \$ touch a b c
-  - \$ echo "Hello there" > kramer
+  - \$ echo "Hello there" > kramerServer
 - Modify /etc/exports file to add new shared filesystem
   - \$ cp /etc/exports /etc/exports.org
   - \$ nano /etc/exports
   - (copy the content from [.assets/exports])
 - Export the NFS filesystem
   - \$ exportfs -rv (r -> publish everything, v -> verbose)
+- Disable firewall in server
+  - \$ systemctl status firewalld
+  - \$ systemctl stop firewalld
 
-## Steps for NFS Client Configuration (Have another -> Linux Machine to act as client)
+## Steps for NFS Client Configuration (Have another -> Linux Machine to act as client - centos)
 
 - Install NFS packages
   - \$ yum install nfs-utils rpcbind
 - Once the packages are installed enable and start rpcbind service
-  - \$ service rpcbing start
+  - \$ systemctl start rpcbind
+  - \$ systemctl status rpcbind
 - Make sure firewalld or iptables stopped (if running)
   - \$ ps -ef | egrep "firewall|iptable"
+  - \$ systemctl stop firewalld
+  - \$ systemctl disable firewalld
 - Show mount from the NFS server
-  - \$ showmount -e 192.168.1.5 (NFS Server IP)
+  - \$ showmount -e <server_ip>
+  - \$ showmount -e 192.168.0.105 (Server IP of Fedora) [run in centos/client]
 - Create a mount point
-  - \$ mkdir /mnt/app
+  - \$ mkdir /mnt/kramer
 - Mount the NFS filesystem
-  - \$ mount 192.168.1.5:/mypretzels /mnt/kramer
+  - \$ mount 192.168.0.105:/mypretzels /mnt/kramer
 - Verify mounted filesystem
   - \$ df -h
+  - \$ cd /mnt/kramer
+  - \$ ls -ltr (you can see- same files which was there in the server now present in client as mounted disk)
+  - \$ touch sabunkar (Check in the server this sabunkar file is present)
 - To unmount
+  - \$ cd /
   - \$ unmount /mnt/kramer
+
+---
