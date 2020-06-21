@@ -1,0 +1,26 @@
+# Installation
+
+- https://www.kali.org/downloads/
+- Kali Linux 64-Bit (NetInstaller)
+- Partition (Manually) Total = 10.7 GB
+  - ROOT
+    - New Partition Size : 9.5 GB
+    - Type: Primary
+    - Location for new partition : Beginning
+    - Use as : Ext4
+    - Mount Point: /
+    - Bootable flag: off
+  - SWAP
+    - New Partition Size : 0.9 GB
+    - Type: Primary
+    - Location for new partition : Beginning
+    - Use as : swap area
+    - Bootable flag: off
+  - BOOT LOADER
+    - New Partition Size : 337.6 MB
+    - Type: Primary
+    - Location for new partition : Beginning
+    - Use as : Ext4
+    - Mount Point: /boot
+    - Bootable flag: on
+- The following partitions are going to be formatted: Yes
