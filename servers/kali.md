@@ -16,7 +16,7 @@
     - Location for new partition : Beginning
     - Use as : swap area
     - Bootable flag: off
-  - BOOT LOADER
+  - BOOT LOADER (PLEASE NOTE -> drive paht)
     - New Partition Size : 337.6 MB
     - Type: Primary
     - Location for new partition : Beginning
@@ -24,3 +24,4 @@
     - Mount Point: /boot
     - Bootable flag: on
 - The following partitions are going to be formatted: Yes
+- GRUB Boot Loader -> (Select - MANUALLY)(select the drive path which was allocated space for boot loader)
