@@ -759,3 +759,9 @@ EX :
 - DB: SQL, informix, NoSQL etc
 
 ---
+
+# What is IT ?
+
+- Transfer of information/data from one person to another, from one location to another through technology
+- IT Components : Hardware, OS, Applications/software, Networking, Security
+- Enterprise Level IT Component: High Level Security, Storage, Database
