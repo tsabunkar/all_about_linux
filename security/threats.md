@@ -1,0 +1,89 @@
+# Types of Security Threats
+
+- DDoS Attack (Distributed Denial-Of-Service)
+- Hacking
+- Malware
+- Pharming
+- Phishing
+- Ransomware
+- Spam
+- Spoofing
+- Spyware
+- Trojan Horses
+- Wi-Fi Eavesdropping
+- Viruses
+- Worms
+
+- DDoS Attack :
+  - When a hacker put a network of zombie computers (other people computers) to attack or destory a specific website or server. That increase in the volume of traffic overloads the website or server causing it to be slow or server shuts down completely.
+- Hacking :
+  - When some1 gains un-authorized access to a computer
+- Malware:
+  - Malicious software that infects your computer, such as computer viruses, worms, Trojan horses, spyware and adware
+  - Consequences:
+    - Intimidate you with scareware, which is usually a pop-up message that tells your computer has a security problem or other false information
+    - Reformate the hard drive of computer causing you to lose all your information
+    - Alter or delete files
+    - Steal sensitive information
+    - Send emails on your behalf
+    - Take contol of your computer and all the software running on it
+  - Pharming:
+    - It points you to a malicious and illegitimate website by redirecting the legitimate URL. Even if the URL is entered correctly, it can still be redirected to fake website.
+    - Consequences:
+      - Convince your that the site is real and legitimate by spoofing or looking almost identical to the actual site down to the smallest details. You may enter your personal information and unknowingly give it to some1 with malicious intent
+  - Phishing:
+    - Fake emails, text messages and websites created to look like - they're from authentic companies. They're sent by criminals to steal personal and financial information from you.
+    - Consequences:
+      - Trick you into giving them information by asking you to update, validate or confirm your account. It is ofter presented in a manner than seems official and intimidating to encourage yor to take action
+      - Provides cyber criminals with your username and password so that they can access your accounts (your online bank account, shopping accounts, etc) and steal your credit card number
+    - Ransomware:
+      - Ransomware is a type of malware that restricts access to your computer or your files and displays a messages that demands payment in order for the restriction to be removed. The two most common means of infection appear to be phishing emails that contains malicious attachments and website pop-up advertisements.
+      - Consequences:
+        - There are 2 common types of ransomware
+          - Locksreen ransomware, displays an image that prevents you from accessing your computer
+          - Encryption ransomware, encrypts files on your system's hard dirve and sometimes on shared network drives, USB dirves, external hard drives and even some cloud storage drives, preventing your from opening them.
+    - Spam:
+      - Spam is one of the more common methods of both sending information out and collecting it from unsuspecting people
+      - Consequences:
+        - Annoy you with unwanted junk mails
+        - Create a burden for communications service providers and bussinesses to filer electronic messages
+        - Phish for your information by tricking you into following links or entering details with offers and promotions
+        - Provide a vehicle for malware, scams, fraud and threats to your privacy
+    - Spoofing:
+      - This techinque is often used in conjunction with phishing in an attempt to steal your information. A website or email address that is created to look like it comes from a legitimate source. An email address may even include your own name, or the name of some1 you know, making it difficult to discern wheather or not the sender is real.
+      - Consequences:
+        - Spends spam using your email address, or a variation of your email addess, to you contact list
+        - Recreates websites that closely resmble the authentic site. This could be a financial institution or other site that requires login or other personal information.
+    - Spyware:
+      - Software that collects personal information about you without you knowing. They often come in the form of a 'free' download and are installed automatically with or without your consent. These are difficult to remove and can infect your computer with viruses.
+      - Consequences:
+        - Collect information about you without you knowing about it and give it to third parties
+        - Send your usernames, passwords, surfing habits, list of applications you've downloaded, settings and even the version of your operating system to third parties
+        - Change the way your computer runs without your knowledge.
+        - Take you to unwanted sites or inundate you with uncontrollable pop-up ads.
+    - Trojan Horses:
+      - A Trojan horse may not be a term you're familir with, but there is good change you or some1 you know has been affected by 1. A malicious program that is disguised as or embedded within, legitimate software. It is an executable file that will install itself and run automatically once it's downloaded.
+      - Consequences:
+        - Delete your file
+        - Use your computer to hack other computers
+        - Watch you through you web cam
+        - Log your keystrokes (suck as credit card number you entered in an online purchase)
+        - Record username, passwords and other personal information.
+    - Viruses:
+      - Most people have heard of computer viruses, but not many know exactly what they are or what they do. Malicious computer programs that are often sent as an email attachment or a download with the intent of infcting your computer, as well as the computers of every1 in your contact list. Just visiting a site can start an automatic download of a virus
+      - Consequences
+        - Send spam
+        - Provide criminals with access to your computer and contact lists
+        - Scan and find personal information like passwords on your computer
+        - Hijack your web browser
+        - Disable your security settings
+    - Wi-Fi Eavesdropping:
+      - Wifi eavesdropping is another method used by cyber criminals to capture personal information. Virtual "listening in" on information that's shared over an unsecure (not encrypted) Wifi network
+      - Consequences:
+        - Potentially access your computer with the right equipment
+        - Steal you personal information including logins and passwords
+    - Worms:
+      - Worms are common threat to computers and the internet as a whole. A worm, unlike- a virus, goes to work on its own without attaching itself to files or programs. It lives in your computer memory, doesn't damage or alter the hard drive and propagates by sending itself to other computers in a network - wheather within a company or the internet itself.
+      - Consequences:
+        - Spread to everyone in you contact list
+        - Cause a tremendous amount of damage by shutting down parts of the internet, wreaking havoc on an internal network and costing companies enormous amounts of lost revenue.

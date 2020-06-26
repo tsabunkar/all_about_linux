@@ -845,3 +845,12 @@ EX :
   - P2V ==> Physical to Virtual (VMWare Converter)
   - Snapshot ==> take snapshot/state of virtual machine (kind of backup)
   - clone or cloning ==> VMMachine can be cloned/copied to another VM machine
+
+---
+
+Run linux in Browser :
+
+- https://geekflare.com/run-linux-from-a-web-browser/#:~:text=JSLinux,Firefox%2C%20Opera%20and%20Internet%20Explorer.
+- https://bellard.org/jslinux/
+
+---
