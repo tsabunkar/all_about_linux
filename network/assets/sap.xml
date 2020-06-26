@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<service>
+  <short>SAP</short>
+  <description>This 3rd party application service</description>
+  <port protocol="tcp" port="32"/>
+</service>

@@ -556,3 +556,60 @@
   - \$ cd /root/.ssh/ (Fedora)
   - \$ ll
   - \$ cat authorized_keys
+
+---
+
+# Firewall
+
+- The Firewalld had multiple zone, to get a list of all zones
+  - \$ firewall-cmd --get-zones
+  - \$ systemctl restart firewalld.service
+  - \$ systemctl status firewalld.service
+- To get a list of active zones
+  - \$ firewall-cmd --get-active-zones
+- To get firewall rules for public zones
+  - \$ firewall-cmd --zone=public --list-all
+    or
+  - \$ firewall-cmd --list-all
+- All services are pre-denfined by firewalld. What if you want to add a 3rd party services:
+  - \$ ll /usr/lib/firewalld/services/<allservices.xml>
+  - \$ nano /usr/lib/firewalld/services/<allservices.xml>
+- To add a service(http):
+  - \$ firewall-cmd --add-service=http
+  - \$ firewall-cmd --list-all (Check in the services: http will be added now)
+  - \$ curl 192.168.1.162
+- To remove the a service :
+  - \$ firewall-cmd --remove-service=http
+  - \$ firewall-cmd --list-all
+- To reload the firewalld configuration
+  - \$ firewall-cmd --reload
+- To add or remove a service permanently
+  - \$ firewall-cmd --add-service=http --permanent
+  - \$ firewall-cmd --remove-service=http --permanent
+- To add a service that is not pre-defined by firewalld
+  - \$ cd /usr/lib/firewalld/services/
+  - \$ cp ssh.xml sap.xml
+  - \$ nano sap.xml (copy content of - [.assets/sap.xml])
+  - \$ systemctl restart firewalld
+  - \$ firewall-cmd --get-services
+  - \$ firewall-cmd --get-services | grep sap
+  - \$ firewall-cmd --add-service=sap
+  - \$ firewall-cmd --list-all (sap service is added)
+  - \$ firewall-cmd --remove-service=sap
+- To add a port :
+  - \$ firewall-cmd --add-port=1110/tcp
+  - \$ firewall-cmd --list-all
+- To remove a port :
+  - \$ firewall-cmd --remove-port=1110/tcp
+  - \$ firewall-cmd --list-all
+- To reject incoming traffice from an IP address :
+  - \$ firewall-cmd --add-rich-rule='rule family="ipv4" source address="192.168.0.25" reject'
+- To block and unblock ICMP incoming traffic
+  - \$ firewall-cmd --add-icmp-block-inversion (block)
+  - \$ firewall-cmd --list-all
+  - \$ firewall-cmd --remove-icmp-block-inversion (unblock)
+- To block outgoing traffic to a specific website/IP Address
+  - \$ host -t a www.facebook.com ( To find the ip address of domain)
+  - \$ systemctl restart firewalld
+  - \$ ping 31.13.79.35
+  - \$ firewall-cmd --direct --add-rule ipv4 filter OUTPUT 0 -d 31.13.79.35 -j DROP

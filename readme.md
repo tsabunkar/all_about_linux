@@ -854,3 +854,31 @@ Run linux in Browser :
 - https://bellard.org/jslinux/
 
 ---
+
+# To remove un-necessary or orphan packages
+
+- The first rule is to keep your server lean and mean. Install only those packages that you really needed. If there are unwanted packages, delete them. The fewer the packages the less chance of unpatched code
+- Guideline:
+  - Do not install packages that you do not need during the inital installation
+  - Pay close attention to the add-on packages
+- To get a list of all packages
+  - rpm -qa (Redhat based distro)
+  - apt list --installed (Debain based distro)
+- Remove packages
+  - \$ rpm -e <package_name>
+  - \$ apt-get remove <package_name>
+- Orphaned Packages:
+  - The objective is to remove all orphaned packages from CentOS Linux. By orphaned packages we mean all packages which is no longer server a purpose of package dependencies
+  - For example: package A ios depended on package B, thus in order to install package A the package B must be installed. Once the package A is removed the package B might still be installed, hence the package B is now orphaned package
+- An built-in utility which allows you to check for orphaned packages
+  - \$ yum-utils
+- Check if that exist in your system
+  - \$ rpm -qa | grep yum-utils
+- If not then install
+  - \$ yum install yum-utils
+- Get a list of all orphaned packages
+  - \$ package-cleanup --leaves
+  - \$ package-cleanup --leaves | wc -l
+- Remove
+  - \$ yum remove 'package-cleanup -leaves'
+  - \$ sudo apt-get autoremove
