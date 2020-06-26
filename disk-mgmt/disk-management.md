@@ -395,3 +395,7 @@ Create a mount point directory
   - \$ systemctl restart nmb
 
 ---
+
+# Difference Between Linux 5, 6, 7 and 8
+
+- CentOS and RHEL are smae, only difference is RHEL is supported by Redhat support team but CentOS is FOSS
