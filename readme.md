@@ -776,3 +776,72 @@ EX :
   - RHCA (Redhat Certified Architect) ==> You must have RHCE, RHCSA
 
 ---
+
+# Issues w.r.t to Network
+
+- \$ ifconfig
+- \$ ifconfig enp0s3
+- \$ ifup enp0s3 (Making the network up)
+  or
+- \$ systemctl restart network.service (Restart network service)
+- \$ ps -ef | grep ssh
+- \$ systemctl restart sshd
+
+---
+
+# Change File Creation Permission
+
+- We can change the default file permissions using - umask
+- umask is a command to set default permission of any newly created file/directory
+- ex- umask u+rw, g+r, o-rwx
+- \$ touch test1
+- \$ ls -ltr test1
+- \$ umask u+rw,g+r,o-rwx (now whenever you create new file/di - this permission would be applied)
+- \$ touch test2
+- \$ ls -ltr test2
+- (NOTE: This changed permission is only applied for current particular session terminal but if we want to retain this permissions then - apply this to - .bashrc file)
+  - \$ cd ~
+  - \$ ls -a
+  - \$ ls .bashrc
+  - \$ nano bashrc
+  - ( End of line add -> umask u+rw,g+r,o-rwx )
+
+---
+
+# Install Oracle Guest Addition (Tools)
+
+- Provides extra tools which provide better adjustment of screens, mouse tracker can come-out of the VM to host without clicking CTRL button, etc
+- Make sure that you are running latest kernel
+  - \$ yum update kernel\*
+- Install following packages
+  - \$ rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+  - (Check ==> https://dl.fedoraproject.org/pub/epel/ )
+- Install the following pacakage
+  - \$ yum install gcc kernel-devel kernel-headers dkms make bzip2 perl
+- Mount VirtualBox Guest Additions
+  - \$ Devices -> Insert Guest Addition CD images -> run
+
+---
+
+# Virtualization
+
+- What is not Virtual ?
+  - Not physical exisiting
+- Virtualization Technology
+  - Virtualization is the process of creating a software-based or virtual representation of something, such as virtual applications, ervers, storage and networks
+- Companies offereing Virtualization Products
+  - VMWare
+  - Microsoft = Hyper-V
+  - Citrix
+  - Redhat
+  - Oracle
+  - Amazon
+  - Google
+- Virtualization Terms
+  - Hypervisor ==> Host / Virtual Servers
+  - Virtual Machine ==> Guest OS / VM
+  - Virtualization Manager ==> vCenter, OVM Manager, etc
+  - Virtual Desktop
+  - P2V ==> Physical to Virtual (VMWare Converter)
+  - Snapshot ==> take snapshot/state of virtual machine (kind of backup)
+  - clone or cloning ==> VMMachine can be cloned/copied to another VM machine
