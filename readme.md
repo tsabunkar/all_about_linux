@@ -882,3 +882,40 @@ Run linux in Browser :
 - Remove
   - \$ yum remove 'package-cleanup -leaves'
   - \$ sudo apt-get autoremove
+
+---
+
+# IP Address Assigned but not Rechable
+
+- Check if you are on the correct network interface (ifconfig)
+- Check to see if you got the right subnet mast or gateway
+- Ping the gateway
+- Check if the gateway is assigned ( \$ nestat -rnv )
+- Check with network team if the correct vLAN is assigned on the switch side
+- Run ethtool or mii-tool to check the NIC status
+- Run ifup <interface> command to bring the NIC port up
+- Restart network
+  - \$ systemctl restart network
+- Check on the status of NIC by running (ifconfig or ip addr) command
+- Check to see if the IP is assigned to some other device (IP conflicts)
+- Turn off firewall dameon/service
+
+---
+
+# Linux System Performance Slow / Issue
+
+- Understanding the problem
+  - Processing
+  - Disk writing
+  - Networking
+  - Hardware
+- Trobleshooting
+  - Check if the right system is reported or you are on the right system
+  - Check disk space ( \$ df -h, du )
+  - Check processing ( htop, top, free, lsmem, /proc/meminfo, vmstat, pmp <PID>, dmidecode, lscpu or /proc/cpuinf )
+  - Check disk issue ( \$ iostat -y 5, lsof )
+  - Check networking (tcpdump -i enps03, lsof -i -P -n | grep -i listen, netstat -plnt or ss -plnt, iftop)
+  - Check system uptime ( uptime )
+  - Check logs
+  - Check hardware status by logging into system console
+  - Other tools (htop, iotop, iptraf, psacct)
