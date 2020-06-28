@@ -613,3 +613,67 @@
   - \$ systemctl restart firewalld
   - \$ ping 31.13.79.35
   - \$ firewall-cmd --direct --add-rule ipv4 filter OUTPUT 0 -d 31.13.79.35 -j DROP
+
+---
+
+# SELinux (Security Enhanced Linux)
+
+- Secuirty Enhanced Linux is a Linux kernel security module that provides a mechansim for supporting access control security policies, including manadatory access controls
+- It is a project of the United States National Security Agency (NSA) and SELinux community
+- [.assets/selinux.png]
+- SELinux Options
+  - Enforcing = Enabled (enabled by default in Redhat, CentOs and Fedora)
+  - Permissive = Disabled but logs the activity
+  - Disable = Disabled and not activity logs
+- To check SELinux status : \$ sestatus (or) getenforce
+- SELinux Setting
+  - setenforce 0 ==> Permissive/Disabled
+  - setenforce 1 ==> Enabled
+- Modify SELinux config for permanent setting
+  - /etc/selinux/config
+    SELINUX=enforcing
+    SELINUX=disabled
+- Before rebooting creating a file: \$ /.autorelabel
+- Two main concepts of SELinux
+  - Labeling
+  - Type enforcement
+- To list the label of a directory
+  - \$ ls -lZ /usr/sbin/httpd
+- To list the label of a direcotry
+  - \$ ls -dZ /etc/httpd
+- As the webserver runs its process is labeled in memory as httpd_t:
+  - \$ rpm -qa | grep http
+  - \$ systemctl status httpd
+  - \$ systemctl start httpd
+  - \$ ps axZ | grep httpd
+- The SELinux assigns the label at the socket level
+  - \$ netstat -tnlpZ | grep http
+- Commands to Manage SELinux setting:
+  - semanage --> to label
+    - login
+    - user
+    - port
+    - interface
+    - module
+    - node
+    - file context
+    - boolean
+    - permissive state
+    - dontaudit
+- Boolean
+  - There are pre-defined out of box booleans that come with SELinux
+    - ex: do we allow ftp server to access home directories
+    - can httpd talk to idap
+  - To Get a list of all booleans
+    - \$ getsebool -a (or) semanage boolean -1
+    - \$ getsebool -a | wc -l
+    - \$ getsebool -a | grep httpd_can_content_ftp
+    - \$ setsebool -P httpd_can_content_ftp on (to set this boolean value is 'on')
+    - \$ setsebool -P httpd_can_content_ftp off
+  - To enable or turn on a booleans
+    - \$ setsebool -P boolean_name on
+  - Check error messages related to selinux
+    - \$ journalctl
+  - To change the type in a label
+    - \$ chcon -t httpd_sys_content_t FILENAME
+    - \$ semanage -t httpd_sys_content_t FILENAME
