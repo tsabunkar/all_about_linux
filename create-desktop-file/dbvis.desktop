@@ -1,0 +1,8 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Type=Application
+Name=DbVisualizer
+Exec=/bin/sh "/home/tejas/DbVisualizer/dbvis"
+Icon=/home/tejas/DbVisualizer/doc/images/DbVis_logo_small.png
+
+# Running sh file as desktop Application
