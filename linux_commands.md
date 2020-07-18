@@ -63,3 +63,13 @@
 Reference:
 
 - https://www.cyberciti.biz/faq/show-display-get-installed-packages-software-list-linux-freebsd-openbsd/
+
+---
+
+- To remove a repository from apt-get repository local file or from PPA (Personal Package Archive)
+  - nano /etc/apt/sources.list.d or /etc/apt/sources.list
+  - Ref:
+    - https://itsfoss.com/how-to-remove-or-delete-ppas-quick-tip/
+    - https://unix.stackexchange.com/questions/219341/how-to-apt-delete-repository
+
+---
