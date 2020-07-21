@@ -32,3 +32,11 @@ https://medium.com/@js_debugger/how-to-install-firefox-developer-edition-on-ubun
 - $ cp -rp ~/.local/share/applications/firefoxDeveloperEdition.desktop /home/$USER/Desktop (Copy paste the icon to Desktop icons)
 
 ---
+
+# In order to add a custom launcher to Ubuntu Dock (Add to Favorites)
+
+- To get list of favorites dock application
+  - \$ gsettings get org.gnome.shell favorite-apps (Array of String)
+- To add new string in this Array (i.e- new favorite dock for ex- pycharm.desktop)
+  - gsettings set org.gnome.shell favorite-apps "['firefox.desktop', 'google-chrome.desktop', 'notepad-plus-plus_notepad-plus-plus.desktop', 'sublime-text_subl.desktop', 'chromium_chromium.desktop', 'org.gnome.Nautilus.desktop', 'code.desktop', 'eclipse.desktop', 'putty.desktop', 'code-insiders.desktop', 'postman.desktop', 'spotify_spotify.desktop', 'virtualbox.desktop', 'pycharm.desktop']"
+- Ref- https://askubuntu.com/questions/990833/cannot-add-custom-launcher-to-ubuntu-dock-add-to-favorites
