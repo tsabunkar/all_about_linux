@@ -1,0 +1,8 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Type=Application
+Name=PyCharm
+Exec=/bin/sh "/home/tejas/tejas/software/pycharm-community-2020.1.3/bin/pycharm.sh"
+Icon=/home/tejas/tejas/software/pycharm-community-2020.1.3/bin/pycharm.svg
+
+# Running sh file as desktop Application
