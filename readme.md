@@ -23,17 +23,14 @@
 
 - VirtualBox is a free and open-source hypervisor for x86 computers currently developed by Orcale and VM-ware
 - It extends the capabilities of computer to virtually multiple run different operating systems on one hardware at the same time.
--
+-     (Linux) or (Windows) or (Mac)
+      Orcale VirtualBox
+          |
+      Operating System (windows or Mac)
+          |
+      Hardware
 
-
-    (Linux) or (Windows) or (Mac)
-    Orcale VirtualBox
-        |
-    Operating System (windows or Mac)
-        |
-    Hardware
-
----
+  ***
 
 # Downloading iso image of centos in Oracle VMBox
 
@@ -919,3 +916,13 @@ Run linux in Browser :
   - Check logs
   - Check hardware status by logging into system console
   - Other tools (htop, iotop, iptraf, psacct)
+
+---
+
+# Clean-up (SSD if used 100%)
+
+- \$ df -h /dev/nvme0n1p3
+- \$ sudo journalctl --vacuum-time=3d (Clear the system log which is older than 3 days)
+- Ref: https://itsfoss.com/free-up-space-ubuntu-linux/
+
+---
