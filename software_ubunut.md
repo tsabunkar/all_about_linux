@@ -176,3 +176,13 @@ Speed up your machine for Latest 20.04 -> Install Missing Graphic Drivers
 Reference : https://fossbytes.com/things-to-do-after-installing-ubuntu/
 
 https://askubuntu.com/questions/730754/how-do-i-show-the-git-branch-with-colours-in-bash-prompt
+
+---
+
+# Sensor to detect CPU temperature
+
+- https://itsfoss.com/check-laptop-cpu-temperature-ubuntu/
+- \$ sudo apt install lm-sensors hddtemp
+- \$ sudo sensors-detect
+- \$ sensors (Gives temperature details in CLI)
+- \$ sudo apt install psensor (Display in top panel)
