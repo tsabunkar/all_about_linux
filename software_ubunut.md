@@ -186,3 +186,21 @@ https://askubuntu.com/questions/730754/how-do-i-show-the-git-branch-with-colours
 - \$ sudo sensors-detect
 - \$ sensors (Gives temperature details in CLI)
 - \$ sudo apt install psensor (Display in top panel)
+
+# Control brightness of External Monitor using CLI
+
+- https://askubuntu.com/questions/974207/control-brightness-on-the-second-monitor
+- https://wiki.archlinux.org/title/xrandr
+- \$ xrandr -q | grep " connected" (To know the display/monitor name which is connected)
+- \$ xrandr --output DP-1 --brightness 1 (Set brightness of monitor name- `DP-1` to 1)
+- \$ xrandr --output DP-1 --brightness 0.7 (Set brightness of monitor name- `DP-1` to 0.7)
+- \$ xrandr --output DP-1 --auto (Set default settings to external monitor)
+
+## Control brightness of External Monitor using GUI
+
+- https://askubuntu.com/questions/218953/can-i-control-brightness-on-second-monitor
+- \$ xrandr -q | grep " connected" (To know the display/monitor name which is connected)
+- \$ sudo add-apt-repository ppa:apandada1/brightness-controller
+- \$ sudo apt update
+- \$ sudo apt install brightness-controller
+- Seach for brightness > Primary Brightness : DP-1 > you can use the slider to change brightness settings
