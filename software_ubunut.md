@@ -204,3 +204,15 @@ https://askubuntu.com/questions/730754/how-do-i-show-the-git-branch-with-colours
 - \$ sudo apt update
 - \$ sudo apt install brightness-controller
 - Seach for brightness > Primary Brightness : DP-1 > you can use the slider to change brightness settings
+
+## Install Playstore in Ubuntu without genymotion
+
+- https://www.clusterednetworks.com/blog/post/install-google-play-store-anbox
+- https://anbox.io/
+- \$ snap install --devmode --beta anbox
+- \$ snap refresh --beta --devmode anbox
+- \$ sudo apt update && sudo apt upgrade 
+- \$ sudo apt install wget curl lzip tar unzip squashfs-tools
+- \$ wget https://raw.githubusercontent.com/geeks-r-us/anbox-playstore-installer/master/install-playstore.sh (install playstore for anbox)
+- \$ chmod +x install-playstore.sh
+- \$ ./install-playstore.sh
