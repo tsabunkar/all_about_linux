@@ -209,6 +209,7 @@ https://askubuntu.com/questions/730754/how-do-i-show-the-git-branch-with-colours
 
 - https://www.clusterednetworks.com/blog/post/install-google-play-store-anbox
 - https://anbox.io/
+- https://www.2daygeek.com/anbox-best-android-emulator-for-linux/
 - \$ snap install --devmode --beta anbox
 - \$ snap refresh --beta --devmode anbox
 - \$ sudo apt update && sudo apt upgrade 
@@ -216,3 +217,4 @@ https://askubuntu.com/questions/730754/how-do-i-show-the-git-branch-with-colours
 - \$ wget https://raw.githubusercontent.com/geeks-r-us/anbox-playstore-installer/master/install-playstore.sh (install playstore for anbox)
 - \$ chmod +x install-playstore.sh
 - \$ ./install-playstore.sh
+- \$ reopen the anobox
