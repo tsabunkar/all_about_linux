@@ -282,3 +282,4 @@ export NVM_DIR="$HOME/.nvm"
 
 - https://askubuntu.com/questions/510709/i-cannot-find-bash-profile-in-ubuntu
 - https://stackoverflow.com/questions/18428374/commands-not-found-on-zsh 
+- for sake of reference and backup --> all the 3 files i.e- ~/.zshrc , ~/.bashrc , ~/.profile had been added here : `./zsh-bash-backup/*` 
