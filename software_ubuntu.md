@@ -252,3 +252,4 @@ https://askubuntu.com/questions/730754/how-do-i-show-the-git-branch-with-colours
 - Now install ohmyzsh which is the package manager for zsh shell (just provides easy configuration of zsh shell)
 - \$ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 - Restart you are system to make zsh as default terminal
+- \$ echo ${SHELL} (should say zsh, rather than /bin/bash)
