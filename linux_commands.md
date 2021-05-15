@@ -19,7 +19,7 @@
 - To give complete admin acess/privliege : \$ sudo chmod +x <directory_name or file_name>
 - 1=> Execute, 2 => Write, 4 => Read | 3 privliege : Admin, Group and Public
   $ chmod <'admin' 'group' 'public'> <file_name or directory_name>
- ex- $ chmod 764 test.txt -> Admin has rwx, Group has rw and Public has only r access
+  ex- $ chmod 764 test.txt -> Admin has rwx, Group has rw and Public has only r access
 - To get/download latest update for packages from remote : \$ sudo apt-get update -> (apt-get is Package Tool Management)
 - To Install the download updates \$ sudo apt-get upgrade
 - To remove unused packages : \$ sudo apt-get autoremove
@@ -39,7 +39,7 @@
 - To find the list of prcoess whcih are using the memory usage : \$ htop
 - To know number of threads, cpu, architecture of your computer : \$ lscpu
 - To kill running process : $ ps aux (Get the JobId of the process u want to kill)
-										 $ sudo kill <JobId>
+  $ sudo kill <JobId>
 - To Enter as Root : sudo su - (Switch user)
 - To know which shell I am using in my terminal : echo \$SHELL or echo \$0
 - To Change hostname : \$ sudo hostname ubuntu (To change permantely, edit hostname inside '/etc/hsotname' file by login in as admin)

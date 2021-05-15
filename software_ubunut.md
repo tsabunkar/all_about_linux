@@ -242,3 +242,13 @@ https://askubuntu.com/questions/730754/how-do-i-show-the-git-branch-with-colours
 - \$ echo 'deb https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/debs/ vscodium main' | sudo tee --append /etc/apt/sources.list.d/vscodium.list
 - \$ sudo apt update && sudo apt install codium
 
+
+## Installing zsh as default CLI rather than bin/bash
+
+- zsh is much enhanced version than bin/bash and much customizable
+- Install zsh:
+- \$ sudo apt install zsh
+- \$ zsh --version
+- Now install ohmyzsh which is the package manager for zsh shell (just provides easy configuration of zsh shell)
+- \$ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+- Restart you are system to make zsh as default terminal
