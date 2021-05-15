@@ -205,32 +205,16 @@ https://askubuntu.com/questions/730754/how-do-i-show-the-git-branch-with-colours
 - \$ sudo apt install brightness-controller
 - Seach for brightness > Primary Brightness : DP-1 > you can use the slider to change brightness settings
 
-## Install Playstore in Ubuntu without genymotion
 
+## Install Google Play Store in Ubuntu without GenyMotion
+
+- https://www.linuxuprising.com/2018/07/anbox-how-to-install-google-play-store.html
 - https://www.clusterednetworks.com/blog/post/install-google-play-store-anbox
-- https://anbox.io/
-- https://www.2daygeek.com/anbox-best-android-emulator-for-linux/
+- https://docs.anbox.io/userguide/install.html
+- (Install Anbox)
 - \$ snap install --devmode --beta anbox
 - \$ snap refresh --beta --devmode anbox
-- \$ sudo apt update && sudo apt upgrade 
+- \$ snap info anbox
+- \$ sudo apt update && sudo apt upgrade
 - \$ sudo apt install wget curl lzip tar unzip squashfs-tools
-- \$ wget https://raw.githubusercontent.com/geeks-r-us/anbox-playstore-installer/master/install-playstore.sh (install playstore for anbox)
-- \$ chmod +x install-playstore.sh
-- \$ ./install-playstore.sh
-- \$ reopen the anobox
-
-## Terminal Vertical spilt using Tmux
-
-- Install Tmux which is default in freeBSD
-- https://github.com/tmux/tmux/wiki
-- https://danielmiessler.com/study/tmux/ 
-- \$ apt install tmux
-- \$ tmux new -s session-name (Create a new session)
-- \$ tmux detach (detach from session) (ctrl+b, d)
-- \$ tmux ls (list of running session)
-- \$ tmux attach -t <session-name> (Attaching an existing session)
-- \$ tmux kill-session -t <session-name> (Killing an running session)
-- Spilt a session into 2 vertical window/pane :
-	- Create a session 
-	- ctrl+b, "
-	- ctrl+b, o (Toggle between the pane/window)
+- \$ sudo apt install wget curl lzip tar unzip squashfs-tools
