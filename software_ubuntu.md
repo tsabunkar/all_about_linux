@@ -253,3 +253,9 @@ https://askubuntu.com/questions/730754/how-do-i-show-the-git-branch-with-colours
 - \$ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 - Restart you are system to make zsh as default terminal
 - \$ echo ${SHELL} (should say zsh, rather than /bin/bash)
+- for uninstall of oh-my-zsh:
+- \$ sudo chmod 777 ~/.oh-my-zsh/tools/uninstall.sh
+- \$ ~/.oh-my-zsh/tools/uninstall.sh
+- for uninstall of zsh:
+- \$ sudo apt-get --purge remove zsh
+- \$ sudo apt autoremove
