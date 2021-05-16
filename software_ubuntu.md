@@ -86,6 +86,14 @@ https://medium.com/@nbanzyme/easy-way-to-install-nvm-on-ubuntu-18-04-2cfb19ee539
 https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-16-04
 https://stackoverflow.com/questions/5926672/where-does-npm-install-packages#:~:text=If%20you%20want%20to%20change,path%20of%20global%20npm%20modules.
 
+To update node and npm
+\$ nvm install v16.1.0
+\$ nvm ls
+\$ nvm use v16.1.0
+\$ nvm install-latest-npm (To update npm version as relevant to node version used)
+
+https://stackoverflow.com/questions/9755841/how-can-i-change-the-version-of-npm-using-nvm
+
 ---
 
 sudo npm install -g @angular/cli
