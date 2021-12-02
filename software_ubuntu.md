@@ -220,7 +220,7 @@ https://askubuntu.com/questions/730754/how-do-i-show-the-git-branch-with-colours
 - https://www.2daygeek.com/anbox-best-android-emulator-for-linux/
 - \$ snap install --devmode --beta anbox
 - \$ snap refresh --beta --devmode anbox
-- \$ sudo apt update && sudo apt upgrade 
+- \$ sudo apt update && sudo apt upgrade
 - \$ sudo apt install wget curl lzip tar unzip squashfs-tools
 - \$ wget https://raw.githubusercontent.com/geeks-r-us/anbox-playstore-installer/master/install-playstore.sh (install playstore for anbox)
 - \$ chmod +x install-playstore.sh
@@ -231,7 +231,7 @@ https://askubuntu.com/questions/730754/how-do-i-show-the-git-branch-with-colours
 
 - Install Tmux which is default in freeBSD
 - https://github.com/tmux/tmux/wiki
-- https://danielmiessler.com/study/tmux/ 
+- https://danielmiessler.com/study/tmux/
 - \$ apt install tmux
 - \$ tmux new -s session-name (Create a new session)
 - \$ tmux detach (detach from session) (ctrl+b, d)
@@ -239,9 +239,9 @@ https://askubuntu.com/questions/730754/how-do-i-show-the-git-branch-with-colours
 - \$ tmux attach -t <session-name> (Attaching an existing session)
 - \$ tmux kill-session -t <session-name> (Killing an running session)
 - Spilt a session into 2 vertical window/pane :
-	- Create a session 
-	- ctrl+b, "
-	- ctrl+b, o (Toggle between the pane/window)
+  - Create a session
+  - ctrl+b, "
+  - ctrl+b, o (Toggle between the pane/window)
 
 ## Installing VSCodium
 
@@ -249,7 +249,6 @@ https://askubuntu.com/questions/730754/how-do-i-show-the-git-branch-with-colours
 - \$ wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg | gpg --dearmor | sudo dd of=/etc/apt/trusted.gpg.d/vscodium.gpg
 - \$ echo 'deb https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/debs/ vscodium main' | sudo tee --append /etc/apt/sources.list.d/vscodium.list
 - \$ sudo apt update && sudo apt install codium
-
 
 ## Installing zsh as default CLI rather than bin/bash
 
@@ -268,9 +267,9 @@ https://askubuntu.com/questions/730754/how-do-i-show-the-git-branch-with-colours
 - \$ sudo apt-get --purge remove zsh
 - \$ sudo apt autoremove
 
-- NOTE: If migrating from bash to zsh, you would get error execute - "node -v" or "tmux ls" or "npm -v" as these 
-user-env-variables (or) ${PATH} (or) alias are only defined in ~/.bashrc or ~/.profile (previously called ~/.bash_profile)
- but not in ~/.zshrc
+- NOTE: If migrating from bash to zsh, you would get error execute - "node -v" or "tmux ls" or "npm -v" as these
+  user-env-variables (or) ${PATH} (or) alias are only defined in ~/.bashrc or ~/.profile (previously called ~/.bash_profile)
+  but not in ~/.zshrc
 - Add below lines ~/.zshrc file:
 
 ```
@@ -278,6 +277,7 @@ user-env-variables (or) ${PATH} (or) alias are only defined in ~/.bashrc or ~/.p
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 #----enable above line for all the ${PATH} variables avaliable in zsh (Tejas)
 ```
+
 and since you are using NVM for nodejs and npm the env variable should be manually copied from ~/.bashrc file to ~/.zshrc file
 
 ```
@@ -289,5 +289,12 @@ export NVM_DIR="$HOME/.nvm"
 - SUPER_IMP_NOTE: After every change in the ~/.zshrc file kill all the terminals and restart it to see the effect <Wasted loot of time for the same reason >
 
 - https://askubuntu.com/questions/510709/i-cannot-find-bash-profile-in-ubuntu
-- https://stackoverflow.com/questions/18428374/commands-not-found-on-zsh 
-- for sake of reference and backup --> all the 3 files i.e- ~/.zshrc , ~/.bashrc , ~/.profile had been added here : `./zsh-bash-backup/*` 
+- https://stackoverflow.com/questions/18428374/commands-not-found-on-zsh
+- for sake of reference and backup --> all the 3 files i.e- ~/.zshrc , ~/.bashrc , ~/.profile had been added here : `./zsh-bash-backup/*`
+
+---
+
+# Hide Top Menu bar in ubuntu
+
+- https://www.maketecheasier.com/hide-top-bar-ubuntu/#:~:text=Press%20the%20Win%20key%20on,Auto%2Dhide%20the%20Dock.%E2%80%9D
+- https://extensions.gnome.org/extension/545/hide-top-bar/
