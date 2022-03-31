@@ -49,6 +49,8 @@
 - To store all the encrupted key-value pairs in GIT remote
   - cd ~/.password-store (Only to be done 1-time at inital)
   - Create remote private repo and link this repo here (Only to be done 1-time at inital)
+    - git init
+    - git remote add origin https://github.com/tsabunkar/pass-mbp.git (Your git remote repo)
   - pass git add .
   - pass git commit -m "personal"
-  - pass git push
+  - pass git push -u origin master
