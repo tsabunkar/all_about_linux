@@ -8,9 +8,15 @@
 - Installing OhMyZsh -> sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 - After downloading the vscode :
   - Move ur vscode app to Application folder
-  - To use code . To open any project in vscode use ->
-    - nano ~/.zshrc
-    - export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+  - To use code . To open any project in vscode use -> (If error: zsh: command not found: code)
+    - sudo nano ~/.zshrc
+    - Copy past below code in last line
+      - export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+    - \$ exit (terminal session saved)
+    - kill the instance of terminal
+    - Reopen Terminal
+    - Type code . should work as expected
 - Ref: https://stackoverflow.com/questions/29955500/code-not-working-in-command-line-for-visual-studio-code-on-osx-mac
   - OhMyZsh theme -> jonathan
 - brew install wget
+- Eclipse download from : https://www.eclipse.org/downloads/download.php?file=/oomph/epp/2022-03/R/eclipse-inst-jre-mac64.dmg

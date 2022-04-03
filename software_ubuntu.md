@@ -267,10 +267,11 @@ https://askubuntu.com/questions/730754/how-do-i-show-the-git-branch-with-colours
 - \$ sudo apt-get --purge remove zsh
 - \$ sudo apt autoremove
 
-- NOTE: If migrating from bash to zsh, you would get error execute - "node -v" or "tmux ls" or "npm -v" as these
-  user-env-variables (or) ${PATH} (or) alias are only defined in ~/.bashrc or ~/.profile (previously called ~/.bash_profile)
-  but not in ~/.zshrc
-- Add below lines ~/.zshrc file:
+- zsh: command not found:
+  - If migrating from bash to zsh, you would get error execute - "node -v" or "tmux ls" or "npm -v" as these
+    user-env-variables (or) ${PATH} (or) alias are only defined in ~/.bashrc or ~/.profile (previously called ~/.bash_profile)
+    but not in ~/.zshrc
+  - Add below lines ~/.zshrc file:
 
 ```
 # If you come from bash you might have to change your $PATH.
@@ -279,6 +280,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 ```
 
 and since you are using NVM for nodejs and npm the env variable should be manually copied from ~/.bashrc file to ~/.zshrc file
+(paster the below code in .zshrc file)
 
 ```
 export NVM_DIR="$HOME/.nvm"
